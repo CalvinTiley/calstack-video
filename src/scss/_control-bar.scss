@@ -1,0 +1,52 @@
+.calstack-video-control-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding-inline: 0.5rem;
+    border-top: solid 1px #ddd;
+
+    background-color: rgba(4, 5, 33, 0.9);
+}
+
+.calstack-video-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    height: 2rem;
+    width: 2rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+
+    background-color: #1c3961;
+    color: white;
+
+    cursor: pointer;
+    transition: background-color 200ms linear;
+
+    &:hover {
+        background-color: #24497d;
+    }
+
+    &--play {
+        content: "\25BA";
+    }
+
+    &--play,
+    &--pause {
+        display: none;
+
+        &.calstack-video-control--active {
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.calstack-video-progress-bar {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+    /* slider track */
+    &::-webkit-slider-runnable-track {
+        background-color: #053a5f;
+        border-radius: 0.5rem;
+        height: 0.5rem;
+    }
+
+    /* slider thumb */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        margin-top: -12px; /* Centers thumb on the track */
+
+        /*custom styles*/
+        background-color: #5cd5eb;
+        height: 2rem;
+        width: 1rem;
+    }
+
+    &:focus::-webkit-slider-thumb {
+        border: 1px solid #053a5f;
+        outline: 3px solid #053a5f;
+        outline-offset: 0.125rem;
+    }
+
+    /******** Firefox styles ********/
+    /* slider track */
+    &::-moz-range-track {
+        background-color: #053a5f;
+        border-radius: 0.5rem;
+        height: 0.5rem;
+    }
+
+    /* slider thumb */
+    &::-moz-range-thumb {
+        border: none; /*Removes extra border that FF applies*/
+        border-radius: 0; /*Removes default border-radius that FF applies*/
+
+        /*custom styles*/
+        background-color: #5cd5eb;
+        height: 2rem;
+        width: 1rem;
+    }
+
+    &:focus::-moz-range-thumb {
+        border: 1px solid #053a5f;
+        outline: 3px solid #053a5f;
+        outline-offset: 0.125rem;
+    }
+}
+
+/* Removes default focus */

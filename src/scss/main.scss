@@ -1,0 +1,11 @@
+@use "./control-bar" as *;
+@use "./progress-bar" as *;
+
+.calstack-video-wrapper {
+    position: relative;
+}
+
+.calstack-video {
+    display: block;
+    width: 100%;
+}
