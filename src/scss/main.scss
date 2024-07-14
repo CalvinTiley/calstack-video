@@ -2,7 +2,17 @@
 @use "./progress-bar" as *;
 
 .calstack-video-wrapper {
+    --accent-color: #ef233c;
+    --accent-color-dark: #f07167;
+
     position: relative;
+
+    color: var(--accent-color);
+
+    @media (prefers-color-scheme: dark) {
+        color: var(--accent-color-dark);
+        --track-color: rgba(255, 255, 255, 0.1);
+    }
 }
 
 .calstack-video {

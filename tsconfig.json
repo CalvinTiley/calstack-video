@@ -2,11 +2,12 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@/*": ["src/*"],
+            "@builders/*": ["src/builders/*"],
             "@constants/*": ["src/constants/*"],
             "@dom/*": ["src/dom/*"],
             "@typing/*": ["src/typing/*"],
-            "@utils/*": ["src/utils/*"]
+            "@utils/*": ["src/utils/*"],
+            "@/*": ["src/*"]
         },
         "sourceMap": true,
         "declaration": true,

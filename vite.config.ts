@@ -22,11 +22,12 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            "@": resolve(__dirname, "./src"),
+            "@builders": resolve(__dirname, "./src/builders"),
             "@constants": resolve(__dirname, "./src/constants"),
             "@dom": resolve(__dirname, "./src/dom"),
             "@typing": resolve(__dirname, "./src/typing"),
             "@utils": resolve(__dirname, "./src/utils"),
+            "@": resolve(__dirname, "./src"),
         },
     },
 });
