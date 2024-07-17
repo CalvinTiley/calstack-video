@@ -1,7 +1,7 @@
 export const exitFullscreenIcon = `
 	<svg
 		viewBox="0 0 100 100"
-		id="calstack-video-fullscreen-button" fill="currentColor"
+		id="calstack-video-exit-fullscreen-button" fill="currentColor"
 	>
 		<polygon
 			points="
@@ -92,7 +92,7 @@ export const exitFullscreenIcon = `
 export const fullscreenIcon = `
 	<svg
 		viewBox="0 0 100 100"
-		id="calstack-video-pause-button" fill="currentColor"
+		id="calstack-video-fullscreen-icon" fill="currentColor"
 	>
 		<polygon
 			points="
@@ -143,7 +143,7 @@ export const fullscreenIcon = `
 export const playIcon = `
 	<svg
 		viewBox="0 0 100 100"
-		id="calstack-video-play-button" fill="currentColor"
+		id="calstack-video-play-icon" fill="currentColor"
 	>
 		<polygon
 			points="
@@ -162,7 +162,7 @@ export const playIcon = `
 export const pauseIcon = `
 	<svg
 		viewBox="0 0 100 100"
-		id="calstack-video-pause-button" fill="currentColor"
+		id="calstack-video-pause-icon" fill="currentColor"
 	>
 		<rect width="40" height="100" x="0" y="0" rx="10" />
 		<rect width="40" height="100" x="60" y="0" rx="10" />
@@ -174,17 +174,30 @@ export const captionsIcon = `
 		viewBox="0 0 100 100"
 		id="calstack-video-captions-icon" fill="currentColor"
 	>
+		<rect height="100" width="100" stroke="currentColor" stroke-width="20" fill-opacity="0" />
+
 		<text
 			x="50"
-			y="50"
+			y="55"
 			dominant-baseline="middle"
 			text-anchor="middle"
-			font-size="74"
+			font-size="46"
 			font-family="Arial"
 			font-weight="bold"
 			preserveAspectRatio="xMidYMid meet"
 		>
 			CC
 		</text>
+	</svg>
+`;
+
+export const pipIcon = `
+	<svg
+		viewBox="0 0 100 100"
+		id="calstack-video-picture-in-picture-icon" fill="currentColor"
+	>
+		<rect height="100" width="100" stroke="currentColor" stroke-width="20" fill-opacity="0" />
+
+		<rect height="30" width="40" x="40" y="52" />
 	</svg>
 `;

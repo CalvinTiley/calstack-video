@@ -2,12 +2,14 @@
 	viewBox="0 0 100 100"
 	id="calstack-video-captions-icon" fill="currentColor"
 >
+	<rect height="100" width="100" stroke="currentColor" stroke-width="20" fill-opacity="0" />
+
 	<text
 		x="50"
-		y="50"
+		y="52"
 		dominant-baseline="middle"
 		text-anchor="middle"
-		font-size="74"
+		font-size="46"
 		font-family="Arial"
 		font-weight="bold"
 		preserveAspectRatio="xMidYMid meet"

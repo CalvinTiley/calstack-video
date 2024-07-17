@@ -186,4 +186,14 @@ export abstract class InteractionBuilder {
             });
         });
     }
+
+    protected buildPipEvents({ elements: { pipButton, video } }: Player) {
+        pipButton?.addEventListener("click", () => {
+            if (document.pictureInPictureElement) {
+                document.exitPictureInPicture();
+            } else {
+                video.requestPictureInPicture();
+            }
+        });
+    }
 }

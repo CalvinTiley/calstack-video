@@ -10,6 +10,7 @@ interface PlayerElements {
     exitFullscreenButton?: HTMLButtonElement;
     fullscreenButton?: HTMLButtonElement;
     pauseButton?: HTMLButtonElement;
+    pipButton?: HTMLButtonElement;
     playButton?: HTMLButtonElement;
     progressBar?: HTMLDivElement;
     progressInput?: HTMLInputElement;
@@ -76,6 +77,7 @@ export class Player extends DOMBuilder {
             this.buildVideoTimeEvents(this);
             this.buildFullscreenEvents(this);
             this.buildCaptionEvents(this);
+            this.buildPipEvents(this);
 
             if (autoplay) this.elements.video.play();
         });

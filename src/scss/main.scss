@@ -12,12 +12,15 @@
 
     position: relative;
 
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     color: var(--accent-color);
 
     @media (prefers-color-scheme: dark) {
         --accent-color: var(--accent-color-dark);
         --text-color: #ececec;
         --track-color: rgba(255, 255, 255, 0.1);
+
+        box-shadow: 0 3px 10px rgba(63, 63, 63, 0.2);
     }
 }
 
@@ -25,4 +28,5 @@
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
 }

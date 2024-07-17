@@ -3,6 +3,7 @@ import {
     exitFullscreenIcon,
     fullscreenIcon,
     pauseIcon,
+    pipIcon,
     playIcon,
 } from "@constants/icons";
 import { PlayerOptions, TimeFormat } from "@typing/player";
@@ -17,6 +18,7 @@ enum ControlType {
     EXIT_SCREEN = "exit-fullscreen",
     FULL_SCREEN = "fullscreen",
     PAUSE = "pause",
+    PIP = "pip",
     PLAY = "play",
 }
 
@@ -50,6 +52,15 @@ export abstract class DOMBuilder extends InteractionBuilder {
                 control.setAttribute("aria-label", "Pause video.");
                 control.setAttribute("data-active", "false");
                 break;
+            case ControlType.PIP:
+                control.innerHTML = pipIcon;
+                control.setAttribute(
+                    "aria-label",
+                    "Enable picture in picture mode.",
+                );
+                control.setAttribute("data-active", "true");
+                control.classList.add("calstack-video-control--active");
+                break;
             case ControlType.PLAY:
                 control.innerHTML = playIcon;
                 control.setAttribute("aria-label", "Play video.");
@@ -79,6 +90,7 @@ export abstract class DOMBuilder extends InteractionBuilder {
         const fullscreenButton = this.buildControl(ControlType.FULL_SCREEN);
         const exitFullscreenButton = this.buildControl(ControlType.EXIT_SCREEN);
         const captionsButton = this.buildControl(ControlType.CAPTIONS);
+        const pipButton = this.buildControl(ControlType.PIP);
         const time = this.buildTimeElements(player);
 
         const spacer = document.createElement("div");
@@ -88,6 +100,7 @@ export abstract class DOMBuilder extends InteractionBuilder {
         player.elements.playButton = playButton;
         player.elements.spacer = spacer;
         player.elements.captions = captionsButton;
+        player.elements.pipButton = pipButton;
         player.elements.fullscreenButton = fullscreenButton;
         player.elements.exitFullscreenButton = exitFullscreenButton;
 
@@ -96,6 +109,7 @@ export abstract class DOMBuilder extends InteractionBuilder {
         controlBar.appendChild(time);
         controlBar.appendChild(spacer);
         controlBar.appendChild(captionsButton);
+        controlBar.appendChild(pipButton);
         controlBar.appendChild(fullscreenButton);
         controlBar.appendChild(exitFullscreenButton);
 
