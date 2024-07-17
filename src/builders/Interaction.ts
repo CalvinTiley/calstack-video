@@ -174,4 +174,16 @@ export abstract class InteractionBuilder {
             }
         });
     }
+
+    protected buildCaptionEvents({ elements: { captions, video } }: Player) {
+        captions?.addEventListener("click", () => {
+            Array.from(video.textTracks).forEach((track) => {
+                if (track.mode === "hidden") {
+                    track.mode = "showing";
+                } else {
+                    track.mode = "hidden";
+                }
+            });
+        });
+    }
 }

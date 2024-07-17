@@ -1,6 +1,6 @@
 <svg
 	viewBox="0 0 100 100"
-	id="calstack-video-pause-button" fill="currentColor"
+	id="calstack-video-pause-icon" fill="currentColor"
 >
 	<rect width="40" height="100" x="0" y="0" rx="10" />
 	<rect width="40" height="100" x="60" y="0" rx="10" />

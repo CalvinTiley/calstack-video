@@ -8,4 +8,5 @@ export interface PlayerOptions {
     controls?: boolean;
     maxTimeFormat?: TimeFormat;
     src: string;
+    subtitles?: Partial<HTMLTrackElement>[];
 }

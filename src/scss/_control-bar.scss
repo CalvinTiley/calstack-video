@@ -1,12 +1,15 @@
 .calstack-video-control-wrapper {
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+    @media (prefers-color-scheme: dark) {
+        box-shadow: 0 3px 10px rgba(63, 63, 63, 0.2);
+    }
 }
 
 .calstack-video-control-bar {
-    --calstack-control-bar-color: rgba(255, 255, 255, 0.8);
-    --calstack-control-bar-color-dark: rgba(12, 12, 12, 0.8);
+    --calstack-control-bar-color: #ffffff;
+    --calstack-control-bar-color-dark: #1e1e1e;
 
     display: flex;
     align-items: center;
@@ -44,7 +47,11 @@
     transition: background-color 200ms linear;
 
     &:hover {
-        filter: brightness(180%);
+        filter: brightness(120%);
+
+        @media (prefers-color-scheme: dark) {
+            filter: brightness(180%);
+        }
     }
 
     &--play {
@@ -64,6 +71,7 @@
 }
 
 .calstack-video-time {
+    color: var(--text-color);
     font-weight: 600;
     line-height: 1;
 }

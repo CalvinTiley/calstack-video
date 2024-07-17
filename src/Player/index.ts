@@ -4,6 +4,7 @@ import { defaultOptions } from "@constants/options";
 import { PlayerOptions } from "../typing/player";
 
 interface PlayerElements {
+    captions?: HTMLButtonElement;
     controlBar?: HTMLDivElement;
     controlWrapper?: HTMLDivElement;
     exitFullscreenButton?: HTMLButtonElement;
@@ -62,6 +63,8 @@ export class Player extends DOMBuilder {
                 this.buildControlBar(this);
             }
         });
+
+        this.buildSubtitles(this);
     }
 
     private buildEvents() {
@@ -72,6 +75,7 @@ export class Player extends DOMBuilder {
             this.buildProgressBarEvents(this);
             this.buildVideoTimeEvents(this);
             this.buildFullscreenEvents(this);
+            this.buildCaptionEvents(this);
 
             if (autoplay) this.elements.video.play();
         });

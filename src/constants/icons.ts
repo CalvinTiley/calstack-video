@@ -168,3 +168,23 @@ export const pauseIcon = `
 		<rect width="40" height="100" x="60" y="0" rx="10" />
 	</svg>
 `;
+
+export const captionsIcon = `
+	<svg
+		viewBox="0 0 100 100"
+		id="calstack-video-captions-icon" fill="currentColor"
+	>
+		<text
+			x="50"
+			y="50"
+			dominant-baseline="middle"
+			text-anchor="middle"
+			font-size="74"
+			font-family="Arial"
+			font-weight="bold"
+			preserveAspectRatio="xMidYMid meet"
+		>
+			CC
+		</text>
+	</svg>
+`;

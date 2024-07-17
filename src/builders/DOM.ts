@@ -1,4 +1,5 @@
 import {
+    captionsIcon,
     exitFullscreenIcon,
     fullscreenIcon,
     pauseIcon,
@@ -12,6 +13,7 @@ import { InteractionBuilder } from "./Interaction";
 import { type Player } from "@/Player";
 
 enum ControlType {
+    CAPTIONS = "captions",
     EXIT_SCREEN = "exit-fullscreen",
     FULL_SCREEN = "fullscreen",
     PAUSE = "pause",
@@ -27,6 +29,11 @@ export abstract class DOMBuilder extends InteractionBuilder {
         );
 
         switch (type) {
+            case ControlType.CAPTIONS:
+                control.innerHTML = captionsIcon;
+                control.setAttribute("aria-label", "Toggle subtitles/captions");
+                control.setAttribute("data-active", "false");
+                break;
             case ControlType.EXIT_SCREEN:
                 control.innerHTML = exitFullscreenIcon;
                 control.setAttribute("aria-label", "Exit fullscreen mode.");
@@ -71,6 +78,7 @@ export abstract class DOMBuilder extends InteractionBuilder {
         const playButton = this.buildControl(ControlType.PLAY);
         const fullscreenButton = this.buildControl(ControlType.FULL_SCREEN);
         const exitFullscreenButton = this.buildControl(ControlType.EXIT_SCREEN);
+        const captionsButton = this.buildControl(ControlType.CAPTIONS);
         const time = this.buildTimeElements(player);
 
         const spacer = document.createElement("div");
@@ -79,6 +87,7 @@ export abstract class DOMBuilder extends InteractionBuilder {
         player.elements.pauseButton = pauseButton;
         player.elements.playButton = playButton;
         player.elements.spacer = spacer;
+        player.elements.captions = captionsButton;
         player.elements.fullscreenButton = fullscreenButton;
         player.elements.exitFullscreenButton = exitFullscreenButton;
 
@@ -86,6 +95,7 @@ export abstract class DOMBuilder extends InteractionBuilder {
         controlBar.appendChild(playButton);
         controlBar.appendChild(time);
         controlBar.appendChild(spacer);
+        controlBar.appendChild(captionsButton);
         controlBar.appendChild(fullscreenButton);
         controlBar.appendChild(exitFullscreenButton);
 
@@ -249,5 +259,27 @@ export abstract class DOMBuilder extends InteractionBuilder {
         wrapper.classList.add("calstack-video-wrapper");
 
         return wrapper;
+    }
+
+    protected buildSubtitles(player: Player) {
+        if (player.options.subtitles) {
+            player.options.subtitles.forEach((sub) => {
+                const trackElement = document.createElement("track");
+
+                for (const property of Object.keys(sub)) {
+                    const value = sub[property as keyof HTMLTrackElement];
+
+                    if (property !== "default" || value) {
+                        trackElement.setAttribute(property, `${value}`);
+                    }
+                }
+
+                player.elements.video.appendChild(trackElement);
+            });
+
+            Array.from(player.elements.video.textTracks).forEach(
+                (track) => (track.mode = "hidden"),
+            );
+        }
     }
 }
