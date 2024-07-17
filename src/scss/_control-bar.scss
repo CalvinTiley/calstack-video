@@ -1,9 +1,12 @@
-.calstack-video-control-bar {
-    --calstack-control-bar-color: #0c0c0c;
-
+.calstack-video-control-wrapper {
     position: absolute;
     bottom: 0;
-    left: 0;
+    width: 100%;
+}
+
+.calstack-video-control-bar {
+    --calstack-control-bar-color: rgba(255, 255, 255, 0.8);
+    --calstack-control-bar-color-dark: rgba(12, 12, 12, 0.8);
 
     display: flex;
     align-items: center;
@@ -11,10 +14,13 @@
 
     box-sizing: border-box;
     width: 100%;
-    padding: 0.5rem;
-    border-top: solid 1px #ddd;
+    padding: 0.25rem;
 
     background-color: var(--calstack-control-bar-color);
+
+    @media (prefers-color-scheme: dark) {
+        --calstack-control-bar-color: var(--calstack-control-bar-color-dark);
+    }
 }
 
 .calstack-video-control {
@@ -46,11 +52,26 @@
     }
 
     &--play,
-    &--pause {
+    &--pause,
+    &--exit-fullscreen,
+    &--fullscreen {
         display: none;
 
         &.calstack-video-control--active {
             display: flex;
         }
     }
+}
+
+.calstack-video-time {
+    font-weight: 600;
+    line-height: 1;
+}
+
+.calstack-video-time-divider {
+    margin-inline: 0.5rem;
+}
+
+.calstack-video-spacer {
+    flex: 1;
 }

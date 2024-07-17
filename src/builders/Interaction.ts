@@ -11,21 +11,31 @@ export abstract class InteractionBuilder {
         );
     }
 
-    private enterFullscreen(element: HTMLElement) {
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element["msRequestFullscreen" as "requestFullscreen"]) {
-            element["msRequestFullscreen" as "requestFullscreen"]();
-        } else if (element["mozRequestFullScreen" as "requestFullscreen"]) {
-            element["mozRequestFullScreen" as "requestFullscreen"]();
-        } else if (element["webkitRequestFullscreen" as "requestFullscreen"]) {
-            element["webkitRequestFullscreen" as "requestFullscreen"]();
+    private enterFullscreen({
+        elements: { exitFullscreenButton, fullscreenButton, wrapper },
+    }: Player) {
+        if (wrapper.requestFullscreen) {
+            wrapper.requestFullscreen();
+        } else if (wrapper["msRequestFullscreen" as "requestFullscreen"]) {
+            wrapper["msRequestFullscreen" as "requestFullscreen"]();
+        } else if (wrapper["mozRequestFullScreen" as "requestFullscreen"]) {
+            wrapper["mozRequestFullScreen" as "requestFullscreen"]();
+        } else if (wrapper["webkitRequestFullscreen" as "requestFullscreen"]) {
+            wrapper["webkitRequestFullscreen" as "requestFullscreen"]();
         } else {
             console.log("Fullscreen API is not supported");
         }
+
+        wrapper.setAttribute("data-fullscreen", "true");
+        fullscreenButton?.classList.remove(ACTIVE_CONTROL_CLASS);
+        fullscreenButton?.setAttribute("data-active", "false");
+        exitFullscreenButton?.classList.add(ACTIVE_CONTROL_CLASS);
+        exitFullscreenButton?.setAttribute("data-active", "true");
     }
 
-    private exitFullscreen() {
+    private exitFullscreen({
+        elements: { exitFullscreenButton, fullscreenButton, wrapper },
+    }: Player) {
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document["webkitExitFullscreen" as "exitFullscreen"]) {
@@ -37,23 +47,35 @@ export abstract class InteractionBuilder {
         } else {
             console.log("Fullscreen API is not supported");
         }
+
+        wrapper.setAttribute("data-fullscreen", "false");
+        exitFullscreenButton?.classList.remove(ACTIVE_CONTROL_CLASS);
+        exitFullscreenButton?.setAttribute("data-active", "false");
+        fullscreenButton?.classList.add(ACTIVE_CONTROL_CLASS);
+        fullscreenButton?.setAttribute("data-active", "true");
     }
 
-    private toggleFullscreen({ elements: { wrapper } }: Player) {
-        this.isFullscreen()
-            ? this.exitFullscreen()
-            : this.enterFullscreen(wrapper);
+    private toggleFullscreen(player: Player) {
+        if (this.isFullscreen()) {
+            this.exitFullscreen(player);
+        } else {
+            this.enterFullscreen(player);
+        }
     }
 
     protected buildFullscreenEvents(player: Player) {
         const {
             options,
-            elements: { fullscreenButton, video },
+            elements: { exitFullscreenButton, fullscreenButton, video },
         } = player;
 
         if (options.controls) {
             fullscreenButton?.addEventListener("click", () => {
-                this.toggleFullscreen(player);
+                this.enterFullscreen(player);
+            });
+
+            exitFullscreenButton?.addEventListener("click", () => {
+                this.exitFullscreen(player);
             });
 
             video.addEventListener("click", (event: Event) => {
@@ -68,11 +90,13 @@ export abstract class InteractionBuilder {
     }
 
     protected buildPlayPauseEvents({
-        elements: { video, pauseButton, playButton },
+        elements: { pauseButton, playButton, video, wrapper },
         options,
     }: Player) {
         if (options.controls) {
             video.addEventListener("play", () => {
+                wrapper?.setAttribute("data-paused", "false");
+
                 pauseButton?.setAttribute("data-active", "true");
                 pauseButton?.classList.add(ACTIVE_CONTROL_CLASS);
 
@@ -81,6 +105,7 @@ export abstract class InteractionBuilder {
             });
 
             video.addEventListener("pause", () => {
+                wrapper?.setAttribute("data-paused", "true");
                 playButton?.setAttribute("data-active", "true");
                 playButton?.classList.add(ACTIVE_CONTROL_CLASS);
 
@@ -111,16 +136,42 @@ export abstract class InteractionBuilder {
     }
 
     protected buildProgressBarEvents({
-        elements: { progressBar, video },
+        elements: { progressInput, video },
         options,
     }: Player) {
         if (options.controls) {
-            progressBar?.addEventListener("change", () => {
+            progressInput?.addEventListener("change", () => {
                 const newTime =
-                    (video.duration * Number(progressBar.value)) / 100;
+                    (video.duration * Number(progressInput.value)) / 100;
 
                 video.currentTime = newTime;
             });
         }
+    }
+
+    protected buildVideoTimeEvents(player: Player) {
+        const {
+            elements: { video, progressInput, time },
+            options: { maxTimeFormat },
+        } = player;
+
+        video.addEventListener("timeupdate", () => {
+            const { currentTime, duration } = video;
+
+            const newProgressValue = ((currentTime / duration) * 100).toFixed(
+                2,
+            );
+
+            if (progressInput) {
+                progressInput.value = newProgressValue;
+            }
+
+            if (time?.current) {
+                time.current.textContent = player.buildTime(
+                    video.currentTime,
+                    maxTimeFormat,
+                );
+            }
+        });
     }
 }

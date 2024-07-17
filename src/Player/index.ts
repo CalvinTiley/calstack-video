@@ -5,11 +5,19 @@ import { PlayerOptions } from "../typing/player";
 
 interface PlayerElements {
     controlBar?: HTMLDivElement;
+    controlWrapper?: HTMLDivElement;
+    exitFullscreenButton?: HTMLButtonElement;
     fullscreenButton?: HTMLButtonElement;
     pauseButton?: HTMLButtonElement;
     playButton?: HTMLButtonElement;
-    progressBar?: HTMLInputElement;
-    time?: HTMLSpanElement;
+    progressBar?: HTMLDivElement;
+    progressInput?: HTMLInputElement;
+    spacer?: HTMLDivElement;
+    time?: {
+        current?: HTMLSpanElement;
+        divider?: HTMLSpanElement;
+        duration?: HTMLSpanElement;
+    };
     video: HTMLVideoElement;
     wrapper: HTMLElement;
 }
@@ -49,21 +57,23 @@ export class Player extends DOMBuilder {
         wrapper.appendChild(this.buildOverlay());
         wrapper.appendChild(video);
 
-        if (controls) {
-            const controlBar = this.buildControlBar(this);
-
-            this.elements.controlBar = controlBar;
-            wrapper.appendChild(controlBar);
-        }
+        video.addEventListener("loadedmetadata", () => {
+            if (controls) {
+                this.buildControlBar(this);
+            }
+        });
     }
 
     private buildEvents() {
         const { autoplay } = this.options;
 
-        this.buildPlayPauseEvents(this);
-        this.buildProgressBarEvents(this);
-        this.buildFullscreenEvents(this);
+        this.elements.video.addEventListener("loadedmetadata", () => {
+            this.buildPlayPauseEvents(this);
+            this.buildProgressBarEvents(this);
+            this.buildVideoTimeEvents(this);
+            this.buildFullscreenEvents(this);
 
-        if (autoplay) this.elements.video.play();
+            if (autoplay) this.elements.video.play();
+        });
     }
 }

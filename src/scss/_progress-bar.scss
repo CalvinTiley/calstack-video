@@ -6,28 +6,35 @@
 }
 
 .calstack-video-progress-bar {
+    position: relative;
+    width: 100%;
+    height: calc(var(--track-height) - 1px);
+}
+
+.calstack-video-progress-input {
     @include shared-styles();
 
     --brightness-hover: 180%;
     --brightness-down: 80%;
     --clip-edges: 0.125em;
-    --thumb-height: 1.25rem;
-    --track-height: 0.125em;
-    --track-color: rgba(0, 0, 0, 0.2);
-    --track-color-dark: rgba(255, 255, 255, 0.1);
+    --thumb-height: 1rem;
+    --track-height: 0.25em;
+    --track-color: rgba(0, 0, 0, 0.4);
 
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
     overflow: hidden;
+    width: 100%;
+    margin: 0;
 
     background: #fff0;
     color: inherit;
 
     font-size: 1.5rem;
     flex: 1;
-
-    @media (prefers-color-scheme: dark) {
-        --track-color: rgba(255, 255, 255, 0.1);
-    }
 
     &::-webkit-slider-runnable-track,
     &::-webkit-slider-thumb {

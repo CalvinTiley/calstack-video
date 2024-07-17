@@ -4,6 +4,10 @@
 .calstack-video-wrapper {
     --accent-color: #ef233c;
     --accent-color-dark: #f07167;
+    --track-height: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
 
     position: relative;
 
@@ -18,4 +22,5 @@
 .calstack-video {
     display: block;
     width: 100%;
+    height: 100%;
 }
