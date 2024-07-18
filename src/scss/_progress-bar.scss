@@ -2,24 +2,19 @@
     appearance: none;
     -webkit-appearance: none;
     transition: all ease 100ms;
-    height: var(--thumb-height);
+    height: var(--calstack-video-thumb-height);
 }
 
 .calstack-video-progress-bar {
     position: relative;
     width: 100%;
-    height: calc(var(--track-height) - 1px);
+    height: calc(var(--calstack-video-track-height) - 1px);
 }
 
 .calstack-video-progress-input {
     @include shared-styles();
 
-    --brightness-hover: 180%;
-    --brightness-down: 80%;
     --clip-edges: 0.125em;
-    --thumb-height: 1rem;
-    --track-height: 0.25em;
-    --track-color: #d2d2d2;
 
     position: absolute;
     top: 50%;
@@ -30,7 +25,7 @@
     width: 100%;
     margin: 0;
 
-    background: #fff0;
+    background: transparent;
     color: inherit;
 
     font-size: 1.5rem;
@@ -46,30 +41,47 @@
     &::-moz-range-thumb {
         appearance: none;
         transition: all ease 100ms;
-        height: var(--thumb-height);
+        height: var(--calstack-video-thumb-height);
     }
 
     &::-webkit-slider-runnable-track {
-        background: linear-gradient(var(--track-color) 0 0) scroll no-repeat
-            center / 100% calc(var(--track-height) + 1px);
+        background: linear-gradient(var(--calstack-video-track-color) 0 0)
+            scroll no-repeat center / 100%
+            calc(var(--calstack-video-track-height) + 1px);
     }
 
     &::-webkit-slider-thumb {
-        --thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
         --clip-top: calc(
-            (var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px
+            (
+                    var(--calstack-video-thumb-height) - var(
+                            --calstack-video-track-height
+                        )
+                ) * 0.5 - 0.5px
         );
-        --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+        --clip-bottom: calc(
+            var(--calstack-video-thumb-height) - var(--clip-top)
+        );
         --clip-further: calc(100% + 1px);
-        --box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
-            100vmax currentColor;
+        --box-fill: calc(
+                -100vmax - var(
+                        --calstack-video-thumb-width,
+                        var(--calstack-video-thumb-height)
+                    ) + 1px
+            )
+            0 0 100vmax currentColor;
 
-        width: var(--thumb-width, var(--thumb-height));
+        width: var(
+            --calstack-video-thumb-width,
+            var(--calstack-video-thumb-height)
+        );
         background: linear-gradient(currentColor 0 0) scroll no-repeat left
-            center / 50% calc(var(--track-height) + 1px);
+            center / 50% calc(var(--calstack-video-track-height) + 1px);
         background-color: currentColor;
         box-shadow: var(--box-fill);
-        border-radius: var(--thumb-width, var(--thumb-height));
+        border-radius: var(
+            --calstack-video-thumb-width,
+            var(--calstack-video-thumb-height)
+        );
 
         filter: brightness(100%);
         clip-path: polygon(
@@ -93,14 +105,20 @@
     &::-moz-range-thumb {
         background: currentColor;
         border: 0;
-        width: var(--thumb-width, var(--thumb-height));
-        border-radius: var(--thumb-width, var(--thumb-height));
+        width: var(
+            --calstack-video-thumb-width,
+            var(--calstack-video-thumb-height)
+        );
+        border-radius: var(
+            --calstack-video-thumb-width,
+            var(--calstack-video-thumb-height)
+        );
         cursor: grab;
     }
 
     &::-moz-range-track {
         width: 100%;
-        background: var(--track-color);
+        background: var(--calstack-video-track-color);
     }
 
     &::-moz-range-progress {
@@ -111,8 +129,8 @@
 
     &::-moz-range-track,
     &::-moz-range-progress {
-        height: calc(var(--track-height) + 1px);
-        border-radius: var(--track-height);
+        height: calc(var(--calstack-video-track-height) + 1px);
+        border-radius: var(--calstack-video-track-height);
     }
 
     &::-moz-range-thumb,
@@ -122,13 +140,13 @@
 
     &:hover {
         &::-webkit-slider-thumb {
-            filter: brightness(var(--brightness-hover));
+            filter: brightness(var(--calstack-video-brightness-hover));
             cursor: grab;
         }
 
         &::-moz-range-thumb,
         &::-moz-range-progress {
-            filter: brightness(var(--brightness-hover));
+            filter: brightness(var(--calstack-video-brightness-hover));
         }
     }
 
@@ -150,7 +168,7 @@
         cursor: grabbing;
 
         &::-webkit-slider-thumb {
-            filter: brightness(var(--brightness-down));
+            filter: brightness(var(--calstack-video-brightness-active));
             cursor: grabbing;
         }
 
@@ -160,7 +178,7 @@
 
         &::-moz-range-thumb,
         &::-moz-range-progress {
-            filter: brightness(var(--brightness-down));
+            filter: brightness(var(--calstack-video-brightness-active));
         }
     }
 }

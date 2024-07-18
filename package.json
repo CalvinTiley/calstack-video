@@ -1,5 +1,8 @@
 {
     "name": "@calstack/video",
+    "author": {
+        "name": "Calvin Tiley"
+    },
     "private": true,
     "version": "0.0.0",
     "type": "module",
