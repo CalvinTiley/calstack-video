@@ -1,28 +1,7 @@
 import { DOMBuilder } from "@builders/DOM";
 import { defaultOptions } from "@constants/options";
-
-import { PlayerOptions } from "../typing/player";
-
-interface PlayerElements {
-    captions?: HTMLButtonElement;
-    controlBar?: HTMLDivElement;
-    controlWrapper?: HTMLDivElement;
-    exitFullscreenButton?: HTMLButtonElement;
-    fullscreenButton?: HTMLButtonElement;
-    pauseButton?: HTMLButtonElement;
-    pipButton?: HTMLButtonElement;
-    playButton?: HTMLButtonElement;
-    progressBar?: HTMLDivElement;
-    progressInput?: HTMLInputElement;
-    spacer?: HTMLDivElement;
-    time?: {
-        current?: HTMLSpanElement;
-        divider?: HTMLSpanElement;
-        duration?: HTMLSpanElement;
-    };
-    video: HTMLVideoElement;
-    wrapper: HTMLElement;
-}
+import type { PlayerElements } from "@typing/dom";
+import type { PlayerOptions } from "@typing/player";
 
 export class Player extends DOMBuilder {
     elements: PlayerElements;

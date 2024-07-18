@@ -1,4 +1,4 @@
-import { PlayerOptions, TimeFormat } from "@typing/player";
+import { type PlayerOptions, TimeFormat } from "@typing/player";
 
 export const defaultOptions = {
     autoplay: false,

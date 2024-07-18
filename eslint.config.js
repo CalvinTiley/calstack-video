@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 
 export default [
     {
-        ignores: ["./coverage", "./public", "./dist", "./pnpm-lock.yaml"],
+        ignores: ["./coverage", "public", "dist", "./pnpm-lock.yaml"],
     },
     {
         files: ["**/*.{js,mjs,cjs,ts}"],

@@ -6,7 +6,7 @@ import {
     pipIcon,
     playIcon,
 } from "@constants/icons";
-import { PlayerOptions, TimeFormat } from "@typing/player";
+import { type PlayerOptions, TimeFormat } from "@typing/player";
 import { isElement } from "@utils/dom";
 import { logError } from "@utils/logger";
 

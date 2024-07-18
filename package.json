@@ -1,5 +1,5 @@
 {
-    "name": "video",
+    "name": "@calstack/video",
     "private": true,
     "version": "0.0.0",
     "type": "module",
@@ -14,6 +14,25 @@
         "test:coverage": "jest --coverage",
         "test:ci": "jest --coverage --config='./jest.ci-config.ts'"
     },
+    "main": "dist/index.js",
+    "files": [
+        "dist",
+        "dist/style.css"
+    ],
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/main.d.ts",
+                "default": "./dist/index.js"
+            },
+            "require": {
+                "types": "./dist/main.d.ts",
+                "default": "./dist/index.cjs"
+            }
+        },
+        "./style.css": "./dist/style.css"
+    },
+    "types": "dist/main.d.ts",
     "devDependencies": {
         "@commitlint/cli": "^19.3.0",
         "@commitlint/config-conventional": "^19.2.2",

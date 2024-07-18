@@ -9,8 +9,11 @@ export default defineConfig({
         emptyOutDir: true,
         lib: {
             entry: resolve(__dirname, "src/main.ts"),
-            formats: ["es"],
+            formats: ["es", "cjs"],
             fileName: "index",
+        },
+        rollupOptions: {
+            external: [resolve(__dirname, "sandbox")],
         },
         sourcemap: true,
     },
@@ -18,7 +21,16 @@ export default defineConfig({
         checker({
             typescript: true,
         }),
-        dts(),
+        dts({
+            rollupTypes: true,
+            exclude: [
+                "sandbox",
+                "vite.config.ts",
+                "src/setupTests.ts",
+                "**/*/*.test.ts",
+                "jest.*",
+            ],
+        }),
     ],
     resolve: {
         alias: {
