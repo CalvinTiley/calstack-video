@@ -1,7 +1,6 @@
 import { DOMBuilder } from "@builders/DOM";
 import { defaultOptions } from "@constants/options";
-import type { PlayerElements } from "@typing/dom";
-import type { PlayerOptions } from "@typing/player";
+import type { PlayerElements, PlayerOptions } from "@typing/player";
 
 export class Player extends DOMBuilder {
     elements: PlayerElements;

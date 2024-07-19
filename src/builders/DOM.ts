@@ -1,3 +1,4 @@
+import { ACTIVE_CONTROL_CLASS } from "@constants/controls";
 import {
     captionsIcon,
     exitFullscreenIcon,
@@ -6,21 +7,14 @@ import {
     pipIcon,
     playIcon,
 } from "@constants/icons";
-import { type PlayerOptions, TimeFormat } from "@typing/player";
+import { ControlType } from "@typing/controls";
+import { type PlayerOptions } from "@typing/player";
+import { TimeFormat } from "@typing/time";
 import { isElement } from "@utils/dom";
 import { logError } from "@utils/logger";
 
 import { InteractionBuilder } from "./Interaction";
 import { type Player } from "@/Player";
-
-enum ControlType {
-    CAPTIONS = "captions",
-    EXIT_SCREEN = "exit-fullscreen",
-    FULL_SCREEN = "fullscreen",
-    PAUSE = "pause",
-    PIP = "pip",
-    PLAY = "play",
-}
 
 export abstract class DOMBuilder extends InteractionBuilder {
     protected buildControl(type: ControlType) {
@@ -45,7 +39,7 @@ export abstract class DOMBuilder extends InteractionBuilder {
                 control.innerHTML = fullscreenIcon;
                 control.setAttribute("aria-label", "Enter fullscreen mode.");
                 control.setAttribute("data-active", "true");
-                control.classList.add("calstack-video-control--active");
+                control.classList.add(ACTIVE_CONTROL_CLASS);
                 break;
             case ControlType.PAUSE:
                 control.innerHTML = pauseIcon;
@@ -59,13 +53,13 @@ export abstract class DOMBuilder extends InteractionBuilder {
                     "Enable picture in picture mode.",
                 );
                 control.setAttribute("data-active", "true");
-                control.classList.add("calstack-video-control--active");
+                control.classList.add(ACTIVE_CONTROL_CLASS);
                 break;
             case ControlType.PLAY:
                 control.innerHTML = playIcon;
                 control.setAttribute("aria-label", "Play video.");
                 control.setAttribute("data-active", "true");
-                control.classList.add("calstack-video-control--active");
+                control.classList.add(ACTIVE_CONTROL_CLASS);
                 break;
         }
 

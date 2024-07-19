@@ -1,4 +1,4 @@
-import { ACTIVE_CONTROL_CLASS } from "@constants/dom";
+import { ACTIVE_CONTROL_CLASS } from "@constants/controls";
 
 import { type Player } from "@/Player";
 
