@@ -6,7 +6,7 @@ export enum TimeFormat {
 export interface PlayerOptions {
     autoplay?: boolean;
     controls?: boolean;
-    maxTimeFormat?: TimeFormat;
+    maxTimeFormat?: `${TimeFormat}`;
     src: string;
     subtitles?: Partial<HTMLTrackElement>[];
 }

@@ -12,4 +12,5 @@ player("[data-selector='target']", {
             srclang: "en",
         },
     ],
+    maxTimeFormat: "hours",
 });
