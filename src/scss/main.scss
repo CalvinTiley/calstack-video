@@ -6,8 +6,7 @@
     --calstack-video-accent-color-dark: #3eceeb;
 
     --calstack-video-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    --calstack-video-box-shadow--dark: box-shadow: 0 3px 10px
-        rgba(63, 63, 63, 0.2);
+    --calstack-video-box-shadow-dark: 0 3px 10px rgba(255, 255, 255, 0.1);
 
     --calstack-video-brightness-active: 130%;
     --calstack-video-brightness-hover: 130%;
@@ -21,7 +20,7 @@
     --calstack-video-thumb-height: 1rem;
 
     --calstack-video-track-color: #d2d2d2;
-    --calstack-video-track-color-dark: rgba(255, 255, 255, 0.1);
+    --calstack-video-track-color-dark: #2c2c2c;
     --calstack-video-track-height: 0.5rem;
 
     @media (prefers-color-scheme: dark) {

@@ -39,13 +39,17 @@
     }
 
     &--play,
-    &--pause,
-    &--exit-fullscreen,
     &--fullscreen {
-        display: none;
+        &[data-active="true"] {
+            > *:last-child {
+                display: none;
+            }
+        }
 
-        &.calstack-video-control--active {
-            display: flex;
+        &[data-active="false"] {
+            > *:first-child {
+                display: none;
+            }
         }
     }
 }

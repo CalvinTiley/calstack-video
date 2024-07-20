@@ -126,3 +126,5 @@ The US spelling is used for `color` as opposed to the UK's `colour` to avoid con
 |      `--calstack-video-track-color`       | The background colour of the progress bar (current progress will use accent colour). |
 |    `--calstack-video-track-color-dark`    |               The dark mode variant of `--calstack-video-track-color`.               |
 |      `--calstack-video-track-height`      |                            The height of the progress bar                            |
+
+<!-- TODO: Include documentation for exported types -->
