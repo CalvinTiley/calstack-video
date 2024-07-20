@@ -37,6 +37,7 @@ export default defineConfig({
             "@builders": resolve(__dirname, "./src/builders"),
             "@constants": resolve(__dirname, "./src/constants"),
             "@dom": resolve(__dirname, "./src/dom"),
+            "@features": resolve(__dirname, "./src/features"),
             "@typing": resolve(__dirname, "./src/typing"),
             "@utils": resolve(__dirname, "./src/utils"),
             "@": resolve(__dirname, "./src"),

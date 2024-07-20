@@ -18,6 +18,7 @@
             "@builders/*": ["src/builders/*"],
             "@constants/*": ["src/constants/*"],
             "@dom/*": ["src/dom/*"],
+            "@features/*": ["src/features/*"],
             "@typing/*": ["src/typing/*"],
             "@utils/*": ["src/utils/*"],
             "@/*": ["src/*"]

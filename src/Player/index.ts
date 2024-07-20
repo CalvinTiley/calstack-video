@@ -1,21 +1,28 @@
-import { DOMBuilder } from "@builders/DOM";
-import { defaultOptions } from "@constants/options";
+import { setupControls } from "@features/controls";
+import { setupOverlay } from "@features/overlay";
+import { setupSubtitles } from "@features/subtitles";
+import { buildVideo, buildWrapper, setupVideo } from "@features/video";
 import type { PlayerElements, PlayerOptions } from "@typing/player";
+import { TimeFormat } from "@typing/time";
 
-export class Player extends DOMBuilder {
+const defaultOptions = {
+    autoplay: false,
+    controls: true,
+    maxTimeFormat: TimeFormat.HOURS,
+} satisfies Partial<PlayerOptions>;
+
+export class Player {
     elements: PlayerElements;
     options: PlayerOptions;
 
     constructor(target: HTMLElement | string, options: PlayerOptions) {
-        super();
-
         this.options = {
             ...defaultOptions,
             ...options,
         };
 
-        const wrapper = this.buildWrapper(target);
-        const video = this.buildVideo(this.options);
+        const wrapper = buildWrapper(target);
+        const video = buildVideo(this.options);
 
         this.elements = {
             wrapper,
@@ -26,38 +33,17 @@ export class Player extends DOMBuilder {
     }
 
     private init() {
-        this.buildDOM();
-        this.buildEvents();
-    }
-
-    private buildDOM() {
-        const { video, wrapper } = this.elements;
-        const { controls } = this.options;
-
-        wrapper.appendChild(this.buildOverlay());
-        wrapper.appendChild(video);
-
-        video.addEventListener("loadedmetadata", () => {
-            if (controls) {
-                this.buildControlBar(this);
-            }
-        });
-
-        this.buildSubtitles(this);
-    }
-
-    private buildEvents() {
-        const { autoplay } = this.options;
-
         this.elements.video.addEventListener("loadedmetadata", () => {
-            this.buildPlayPauseEvents(this);
-            this.buildProgressBarEvents(this);
-            this.buildVideoTimeEvents(this);
-            this.buildFullscreenEvents(this);
-            this.buildCaptionEvents(this);
-            this.buildPipEvents(this);
+            this.elements.wrapper.appendChild(this.elements.video);
 
-            if (autoplay) this.elements.video.play();
+            setupSubtitles(this);
+            setupOverlay(this);
+
+            if (this.options.controls) {
+                setupControls(this);
+            }
+
+            setupVideo(this);
         });
     }
 }

@@ -12,9 +12,8 @@ export interface PlayerElements {
     captions?: HTMLButtonElement;
     controlBar?: HTMLDivElement;
     controlWrapper?: HTMLDivElement;
-    exitFullscreenButton?: HTMLButtonElement;
     fullscreenButton?: HTMLButtonElement;
-    pauseButton?: HTMLButtonElement;
+    overlay?: HTMLDivElement;
     pipButton?: HTMLButtonElement;
     playButton?: HTMLButtonElement;
     progressBar?: HTMLDivElement;
