@@ -2,24 +2,25 @@ import { ACTIVE_CONTROL_CLASS } from "@constants/controls";
 
 import { Player } from "@/Player";
 
-const isFullscreen = () =>
-    document.fullscreenElement ||
-    document["webkitFullscreenElement" as "fullscreenElement"] ||
-    document["mozFullScreenElement" as "fullscreenElement"];
+export const isFullscreen = () =>
+    Boolean(
+        document.fullscreenElement ||
+            document["webkitFullscreenElement" as "fullscreenElement"] ||
+            document["mozFullScreenElement" as "fullscreenElement"],
+    );
 
-const enterFullscreen = ({
+export const enterFullscreen = ({
     elements: { fullscreenButton, wrapper },
 }: Player) => {
     if (wrapper.requestFullscreen) {
         wrapper.requestFullscreen();
-    } else if (wrapper["msRequestFullscreen" as "requestFullscreen"]) {
-        wrapper["msRequestFullscreen" as "requestFullscreen"]();
-    } else if (wrapper["mozRequestFullScreen" as "requestFullscreen"]) {
-        wrapper["mozRequestFullScreen" as "requestFullscreen"]();
     } else if (wrapper["webkitRequestFullscreen" as "requestFullscreen"]) {
         wrapper["webkitRequestFullscreen" as "requestFullscreen"]();
+    } else if (wrapper["mozRequestFullScreen" as "requestFullscreen"]) {
+        wrapper["mozRequestFullScreen" as "requestFullscreen"]();
     } else {
-        console.log("Fullscreen API is not supported");
+        console.error("Fullscreen API is not supported");
+        return;
     }
 
     wrapper.setAttribute("data-fullscreen", "true");
@@ -27,7 +28,7 @@ const enterFullscreen = ({
     fullscreenButton?.setAttribute("data-active", "false");
 };
 
-const exitFullscreen = ({
+export const exitFullscreen = ({
     elements: { fullscreenButton, wrapper },
 }: Player) => {
     if (document.exitFullscreen) {
@@ -36,10 +37,9 @@ const exitFullscreen = ({
         document["webkitExitFullscreen" as "exitFullscreen"]();
     } else if (document["mozCancelFullScreen" as "exitFullscreen"]) {
         document["mozCancelFullScreen" as "exitFullscreen"]();
-    } else if (document["msExitFullscreen" as "exitFullscreen"]) {
-        document["msExitFullscreen" as "exitFullscreen"]();
     } else {
-        console.log("Fullscreen API is not supported");
+        console.error("Fullscreen API is not supported");
+        return;
     }
 
     wrapper.setAttribute("data-fullscreen", "false");
