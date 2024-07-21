@@ -30,7 +30,14 @@ export const setupControlBar = (player: Player) => {
     controlBar.appendChild(time);
     controlBar.appendChild(spacer);
     controlBar.appendChild(captionsButton);
-    controlBar.appendChild(pipButton);
+
+    if (
+        (player.elements.video as { requestPictureInPicture: unknown })
+            .requestPictureInPicture
+    ) {
+        controlBar.appendChild(pipButton);
+    }
+
     controlBar.appendChild(fullscreenButton);
 
     return controlBar;
