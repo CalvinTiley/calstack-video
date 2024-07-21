@@ -125,12 +125,12 @@
         appearance: none;
         background: currentColor;
         transition-delay: 30ms;
+        box-shadow: 1px 0 0 0px currentColor;
     }
 
     &::-moz-range-track,
     &::-moz-range-progress {
         height: calc(var(--calstack-video-track-height) + 1px);
-        border-radius: var(--calstack-video-track-height);
     }
 
     &::-moz-range-thumb,

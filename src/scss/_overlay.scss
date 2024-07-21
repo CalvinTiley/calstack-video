@@ -1,0 +1,41 @@
+.calstack-video-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    bottom: 47px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms;
+
+    cursor: pointer;
+
+    [data-paused="true"] & {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    &:hover {
+        .calstack-video-big-play {
+            filter: brightness(var(--calstack-video-brightness-hover));
+        }
+    }
+}
+
+.calstack-video-big-play {
+    width: 5rem;
+    height: 5rem;
+    padding: 1rem;
+    border-radius: 100vw;
+    border: solid 0.25rem currentColor;
+    box-sizing: border-box;
+
+    transition: filter 200ms;
+    filter: brightness(100%);
+}

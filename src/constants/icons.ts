@@ -147,8 +147,8 @@ export const playIcon = `
 	>
 		<polygon
 			points="
-				7.5,7.5
-				7.5,92.5
+				15,7.5
+				15,92.5
 				92.5,50
 			"
 			rx="15"
