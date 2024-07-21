@@ -1,6 +1,8 @@
 @use "./control-bar" as *;
 @use "./overlay" as *;
 @use "./progress-bar" as *;
+@use "./video" as *;
+@use "./wrapper" as *;
 
 :root {
     --calstack-video-accent-color: #2ca0d2;
@@ -37,21 +39,4 @@
 
         --calstack-video-track-color: var(--calstack-video-track-color-dark);
     }
-}
-
-.calstack-video-wrapper {
-    display: flex;
-    flex-direction: column;
-
-    position: relative;
-
-    box-shadow: var(--calstack-video-box-shadow);
-    color: var(--calstack-video-accent-color);
-}
-
-.calstack-video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5rem 0.5rem 0 0;
 }

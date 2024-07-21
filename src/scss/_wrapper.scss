@@ -1,0 +1,9 @@
+.calstack-video-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    box-shadow: var(--calstack-video-box-shadow);
+    color: var(--calstack-video-accent-color);
+}
