@@ -8,7 +8,7 @@ export const onPlay = (player: Player) => () => {
     const { playButton, wrapper } = player.elements;
     wrapper.setAttribute("data-paused", "false");
     playButton?.setAttribute("data-active", "false");
-    playButton?.setAttribute("aria-label", "Pause video.");
+    playButton?.setAttribute("aria-label", "Pause video");
     playButton?.classList.remove(ACTIVE_CONTROL_CLASS);
 };
 
@@ -16,7 +16,7 @@ export const onPause = (player: Player) => () => {
     const { playButton, wrapper } = player.elements;
     wrapper.setAttribute("data-paused", "true");
     playButton?.setAttribute("data-active", "true");
-    playButton?.setAttribute("aria-label", "Play video.");
+    playButton?.setAttribute("aria-label", "Play video");
     playButton?.classList.add(ACTIVE_CONTROL_CLASS);
 };
 
