@@ -3,7 +3,7 @@ import { buildTime } from "@utils/dom";
 
 import { Player } from "@/Player";
 
-const buildTimeElement = (
+export const buildTimeElement = (
     totalSeconds: number,
     maxTimeFormat: PlayerOptions["maxTimeFormat"],
     type: "currentTime" | "duration",

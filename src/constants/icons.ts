@@ -1,7 +1,7 @@
 export const exitFullscreenIcon = `
 	<svg
 		viewBox="0 0 100 100"
-		id="calstack-video-exit-fullscreen-button" fill="currentColor"
+		id="calstack-video-exit-fullscreen-icon" fill="currentColor"
 	>
 		<polygon
 			points="
