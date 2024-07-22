@@ -1,10 +1,8 @@
 import { Player } from "@/Player";
 
-export const buildCaptionEvents = (
-    control: HTMLButtonElement,
-    { elements: { video } }: Player,
-) => {
-    control.addEventListener("click", () => {
+export const onClick =
+    ({ elements: { video } }: Player) =>
+    () => {
         Array.from(video.textTracks).forEach((track) => {
             if (track.mode === "hidden") {
                 track.mode = "showing";
@@ -12,5 +10,4 @@ export const buildCaptionEvents = (
                 track.mode = "hidden";
             }
         });
-    });
-};
+    };

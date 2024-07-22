@@ -1,4 +1,3 @@
-import { ACTIVE_CONTROL_CLASS } from "@constants/controls";
 import { exitFullscreenIcon, fullscreenIcon } from "@constants/icons";
 import { ControlType } from "@typing/controls";
 
@@ -9,19 +8,13 @@ import { Player } from "@/Player";
 
 export const buildFullscreenControl = (player: Player) => {
     const control = buildBaseControl(ControlType.FULL_SCREEN);
+    player.elements.fullscreenButton = control;
 
     control.innerHTML = fullscreenIcon + exitFullscreenIcon;
     control.setAttribute("aria-label", "Enter fullscreen mode.");
-    control.setAttribute("data-active", "true");
-    control.classList.add(ACTIVE_CONTROL_CLASS);
+    control.setAttribute("data-active", "false");
 
-    player.elements.fullscreenButton = control;
-
-    const { options } = player;
-
-    if (options.controls) {
-        onClick(control, player);
-    }
+    control.addEventListener("click", onClick(player));
 
     return control;
 };

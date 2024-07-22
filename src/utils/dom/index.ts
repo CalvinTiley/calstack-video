@@ -4,11 +4,9 @@ import { TimeFormat } from "@typing/time";
 export const isElement = (element: unknown): element is HTMLElement =>
     element instanceof HTMLElement;
 
-const padTime = (value: number) => {
-    return `${value}`.padStart(2, "0");
-};
+export const padTime = (value: number) => `${value}`.padStart(2, "0");
 
-const getTimeUnits = (
+export const getTimeUnits = (
     totalSeconds: number,
     maxTimeFormat: PlayerOptions["maxTimeFormat"],
 ) => {

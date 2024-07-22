@@ -3,7 +3,7 @@ import { ControlType } from "@typing/controls";
 
 import { buildBaseControl } from "../utilities";
 
-import { buildCaptionEvents } from "./events";
+import { onClick } from "./events";
 import { Player } from "@/Player";
 
 export const buildCaptionsControl = (player: Player) => {
@@ -15,7 +15,7 @@ export const buildCaptionsControl = (player: Player) => {
 
     player.elements.captions = control;
 
-    buildCaptionEvents(control, player);
+    control.addEventListener("click", onClick(player));
 
     return control;
 };

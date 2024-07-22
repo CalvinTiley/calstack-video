@@ -11,8 +11,8 @@ export const buildPIPControl = (player: Player) => {
     const control = buildBaseControl(ControlType.PIP);
 
     control.innerHTML = pipIcon;
-    control.setAttribute("aria-label", "Enable picture in picture mode.");
-    control.setAttribute("data-active", "true");
+    control.setAttribute("aria-label", "Enter picture in picture mode.");
+    control.setAttribute("data-active", "false");
     control.classList.add(ACTIVE_CONTROL_CLASS);
 
     player.elements.pipButton = control;

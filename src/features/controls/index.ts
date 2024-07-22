@@ -10,4 +10,6 @@ export const setupControls = (player: Player) => {
     controlWrapper.appendChild(setupControlBar(player));
 
     player.elements.wrapper.appendChild(controlWrapper);
+
+    return controlWrapper;
 };
