@@ -1,0 +1,11 @@
+{
+	"tabWidth": 4,
+	"importOrder": [
+		"^react$",
+		"<THIRD_PARTY_MODULES>",
+		"^[../]",
+		"^[./]"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}

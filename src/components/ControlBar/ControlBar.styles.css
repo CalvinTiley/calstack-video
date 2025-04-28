@@ -1,0 +1,27 @@
+.calstack-video-control-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-inline: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 200ms;
+
+    &[data-active="true"],
+    .calstack-video-wrapper[data-hovering="true"] & {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.calstack-video-control-bar-controls {
+    display: flex;
+    align-items: center;
+}
+
+.calstack-video-control-bar-center {
+    flex-grow: 1;
+    padding-inline: 0.5rem;
+}

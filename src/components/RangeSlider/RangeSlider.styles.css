@@ -1,0 +1,38 @@
+.calstack-video-range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: var(--calstack-video-slider-track-height);
+    border-radius: 15px;
+    background: linear-gradient(
+        to right,
+        var(--calstack-video-color-track-progress) 100%,
+        var(--calstack-video-color-track) 100%
+    );
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+}
+
+.calstack-video-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: var(--calstack-video-slider-thumb-size);
+    width: var(--calstack-video-slider-thumb-size);
+    background-color: var(--calstack-video-color-slider-thumb);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: var(--calstack-video-slider-thumb-offset);
+    transition: 0.2s ease-in-out;
+}
+
+.calstack-video-range-slider::-moz-range-thumb {
+    height: var(--calstack-video-slider-thumb-size);
+    width: var(--calstack-video-slider-thumb-size);
+    background-color: var(--calstack-video-color-slider-thumb);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}

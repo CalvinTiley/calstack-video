@@ -1,0 +1,30 @@
+.calstack-video-wrapper {
+    --calstack-video-color-accent: #40b230;
+    --calstack-video-color-control: #eee;
+    --calstack-video-color-control--hover: #fff;
+    --calstack-video-color-slider-track: rgba(255, 255, 255, 0.2);
+    --calstack-video-color-slider-track-progress: #fff;
+    --calstack-video-color-slider-thumb: var(
+        --calstack-video-color-slider-track-progress
+    );
+    --calstack-video-control-size: 2em;
+
+    --calstack-video-font-family: Arial, Helvetica, sans-serif;
+
+    --calstack-video-slider-thumb-size: 0.75rem;
+    --calstack-video-slider-track-height: 6px;
+    --calstack-video-slider-thumb-offset: calc(
+        (
+                var(--calstack-video-slider-track-height) -
+                    var(-calstack-video-slider-thumb-size)
+            ) /
+            2
+    );
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    position: relative;
+    font-family: var(--calstack-video-font-family);
+}

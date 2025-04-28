@@ -1,0 +1,17 @@
+.calstack-video-control {
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0;
+    padding: 0 0.5rem;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    color: var(--calstack-video-color-control);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calstack-video-control:hover {
+    color: var(--calstack-video-color-control--hover);
+}

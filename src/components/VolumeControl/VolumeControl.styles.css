@@ -1,0 +1,16 @@
+.calstack-video-volume {
+    display: flex;
+    align-items: center;
+}
+
+.calstack-video-volume:hover .calstack-video-volume-slider-container {
+    max-width: 100vw;
+}
+
+.calstack-video-volume-slider-container {
+    overflow: hidden;
+    max-width: 0;
+    width: 5rem;
+    padding-block: 2px;
+    transition: max-width 500ms linear;
+}
