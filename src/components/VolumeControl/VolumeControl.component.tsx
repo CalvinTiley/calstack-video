@@ -29,7 +29,7 @@ export const VolumeControl = () => {
                     className="calstack-video-volume-range"
                     id="calstack-video-volume-slider"
                     name="calstack-video-volume-slider"
-                    value={volume * 100}
+                    value={volume}
                 />
             </div>
         </div>

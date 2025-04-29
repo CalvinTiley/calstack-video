@@ -1,12 +1,10 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent } from "react";
 
 interface IUseRangeSlider {
     onChange(value: number): void;
 }
 
 export const useRangeSlider = ({ onChange }: IUseRangeSlider) => {
-    const [currentProgress, setCurrentProgress] = useState(100);
-
     const onRangeChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { value, max, min } = event.target;
 
@@ -16,12 +14,10 @@ export const useRangeSlider = ({ onChange }: IUseRangeSlider) => {
 
         const progress = ((safeValue - safeMin) / (safeMax - safeMin)) * 100;
 
-        setCurrentProgress(progress);
         onChange(progress);
     };
 
     return {
-        currentProgress,
         onRangeChange,
     };
 };

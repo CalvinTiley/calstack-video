@@ -16,7 +16,7 @@ export const RangeSlider = ({
     value,
     ...props
 }: IRangeSlider) => {
-    const { currentProgress, onRangeChange } = useRangeSlider({
+    const { onRangeChange } = useRangeSlider({
         onChange,
     });
 
@@ -26,7 +26,7 @@ export const RangeSlider = ({
             className={buildClassName("calstack-video-range-slider", className)}
             {...props}
             style={{
-                background: `linear-gradient(to right, var(--calstack-video-color-slider-track-progress) ${currentProgress}%, var(--calstack-video-color-slider-track) ${currentProgress}%)`,
+                background: `linear-gradient(to right, var(--calstack-video-color-slider-track-progress) ${value}%, var(--calstack-video-color-slider-track) ${value}%)`,
                 ...props.style,
             }}
             onChange={onRangeChange}

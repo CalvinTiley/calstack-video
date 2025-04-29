@@ -2,26 +2,13 @@ import { useCallback } from "react";
 import { useVideoContext } from "~contexts";
 
 export const useVolumeControl = () => {
-    const {
-        videoRef,
-        isMuted,
-        volume,
-        volumeBeforeMute,
-        setVolume,
-        setVolumeBeforeMute,
-    } = useVideoContext();
+    const { videoRef, isMuted, volume, setVolume } = useVideoContext();
 
     const toggleMute = useCallback(() => {
         if (videoRef.current) {
-            if (isMuted) {
-                setVolume(volumeBeforeMute ? volumeBeforeMute : 1);
-            } else {
-                setVolumeBeforeMute(videoRef.current.volume);
-                setVolume(0);
-            }
-            videoRef.current[isMuted ? "pause" : "play"]();
+            videoRef.current.muted = !isMuted;
         }
-    }, [isMuted, setVolume, setVolumeBeforeMute, volumeBeforeMute, videoRef]);
+    }, [isMuted, videoRef]);
 
     const onSliderChange = (value: number) => {
         if (videoRef.current) {
@@ -34,7 +21,7 @@ export const useVolumeControl = () => {
     return {
         isMuted,
         onSliderChange,
-        volume,
+        volume: isMuted ? 0 : volume * 100,
         toggleMute,
     };
 };
