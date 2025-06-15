@@ -1,9 +1,6 @@
 export { ConditionalVisible } from "./ConditionalVisible";
 export { ControlBarControl as Control } from "./ControlBar/components/Control";
 export { ControlBar } from "./ControlBar";
-export { FullscreenControl } from "./ControlBar/components/FullscreenControl";
-export { NextControl } from "./ControlBar/components/NextControl";
-export { PlayPauseControl } from "./ControlBar/components/PlayPauseControl";
 export { RangeSlider } from "./RangeSlider";
 export { Time } from "./Time";
 export { VideoElement } from "./VideoElement";
