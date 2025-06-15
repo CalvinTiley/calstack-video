@@ -1,1 +1,1 @@
-export * from "./ProgressBar.component";
+export { ControlBarProgressBar } from "./ProgressBar.component";

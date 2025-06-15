@@ -1,1 +1,1 @@
-export * from "./ControlBar.component";
+export { ControlBar } from "./ControlBar.component";

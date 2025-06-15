@@ -1,21 +1,21 @@
 import { useToggleFullscreen } from "~hooks";
-import { ConditionalVisible } from "../ConditionalVisible";
-import { Control } from "../Control";
-import { EnterFullscreenIcon, ExitFullscreenIcon } from "../Icons";
+import { ConditionalVisible } from "../../../ConditionalVisible";
+import { ControlBarControl } from "../Control";
+import { EnterFullscreenIcon, ExitFullscreenIcon } from "../../../Icons";
 import { useVideoContext } from "~contexts";
 
-export const FullscreenControl = () => {
+export const ControlBarFullscreenControl = () => {
     const { isFullscreen } = useVideoContext();
     const toggleFullscreen = useToggleFullscreen();
 
     return (
-        <Control onClick={toggleFullscreen}>
+        <ControlBarControl onClick={toggleFullscreen}>
             <ConditionalVisible
                 on={!isFullscreen}
                 fallback={<ExitFullscreenIcon />}
             >
                 <EnterFullscreenIcon />
             </ConditionalVisible>
-        </Control>
+        </ControlBarControl>
     );
 };

@@ -1,1 +1,1 @@
-export * from "./build-class-name.utility";
+export { buildClassName } from "./build-class-name.utility";

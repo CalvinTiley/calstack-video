@@ -1,8 +1,8 @@
 import { RangeSlider } from "~components";
 
-import { useProgressBar } from "./use-progress-bar";
+import { useProgressBar } from "./use-progress-bar.hook";
 
-export const ProgressBar = () => {
+export const ControlBarProgressBar = () => {
     const { onChange, onMouseDown, onMouseUp, progress } = useProgressBar();
 
     return (

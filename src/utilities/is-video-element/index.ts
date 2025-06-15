@@ -1,1 +1,1 @@
-export * from "./is-video-element.utility";
+export { isVideoElement } from "./is-video-element.utility";

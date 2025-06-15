@@ -8,7 +8,7 @@ interface IControl extends HTMLAttributes<HTMLButtonElement> {
     isActive?: boolean;
 }
 
-export const Control = ({
+export const ControlBarControl = ({
     children,
     className,
     isActive,

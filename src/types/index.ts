@@ -1,1 +1,1 @@
-export type * from "./video.type";
+export type { ICalstackVideo, IVideoElement } from "./video.type";

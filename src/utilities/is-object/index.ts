@@ -1,1 +1,1 @@
-export * from "./is-object.utility";
+export { isObject } from "./is-object.utility";

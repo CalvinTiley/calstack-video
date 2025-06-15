@@ -1,1 +1,1 @@
-export * from "./BaseIcon.component";
+export { BaseIcon } from "./BaseIcon.component";

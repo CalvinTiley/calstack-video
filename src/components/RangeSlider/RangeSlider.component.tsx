@@ -1,14 +1,8 @@
 import { buildClassName } from "~utilities";
-import { InputHTMLAttributes } from "react";
-import { useRangeSlider } from "./use-range-slider";
+import { useRangeSlider } from "./use-range-slider.hook";
 
 import "./RangeSlider.styles.css";
-
-interface IRangeSlider
-    extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange"> {
-    className?: string;
-    onChange(value: number): void;
-}
+import { IRangeSlider } from "./RangeSlider.types";
 
 export const RangeSlider = ({
     className,

@@ -21,7 +21,7 @@ export const useVolumeControl = () => {
     return {
         isMuted,
         onSliderChange,
-        volume: isMuted ? 0 : volume * 100,
         toggleMute,
+        volume: isMuted ? 0 : volume * 100,
     };
 };

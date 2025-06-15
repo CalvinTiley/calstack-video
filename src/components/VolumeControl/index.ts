@@ -1,1 +1,1 @@
-export * from "./VolumeControl.component";
+export { VolumeControl } from "./VolumeControl.component";

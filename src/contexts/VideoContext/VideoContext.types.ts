@@ -1,12 +1,10 @@
-import {
-    createContext,
-    Dispatch,
-    RefObject,
-    SetStateAction,
-    useContext,
-} from "react";
+import { Dispatch, ReactNode, RefObject, SetStateAction } from "react";
 
-interface IVideoContext {
+export interface IVideoProvider {
+    children: ReactNode;
+}
+
+export interface IVideoContext {
     currentTime: number;
     duration: number;
     isFullscreen: boolean;
@@ -28,17 +26,3 @@ interface IVideoContext {
     videoRef: RefObject<HTMLVideoElement>;
     wrapperRef: RefObject<HTMLDivElement>;
 }
-
-export const VideoContext = createContext<IVideoContext | null>(null);
-
-export const useVideoContext = () => {
-    const ctx = useContext(VideoContext);
-
-    if (!ctx) {
-        throw new Error(
-            "useVideoContext must be used within a <VideoProvider>",
-        );
-    }
-
-    return ctx;
-};

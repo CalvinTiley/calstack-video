@@ -1,14 +1,11 @@
 import { buildClassName } from "~utilities";
-import { ICalstackVideoElement } from "../../types/video.type";
+import { IVideoElement } from "../../types/video.type";
 
-import { useVideo } from "./use-video";
+import { useVideo } from "./use-video.hook";
 
 import "./VideoElement.styles.css";
 
-export const CalstackVideoElement = ({
-    className,
-    ...props
-}: ICalstackVideoElement) => {
+export const VideoElement = ({ className, ...props }: IVideoElement) => {
     const {
         onCanPlay,
         onLoadedMetaData,

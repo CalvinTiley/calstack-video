@@ -1,1 +1,1 @@
-export * from "./use-toggle-fullscreen.hook";
+export { useToggleFullscreen } from "./use-toggle-fullscreen.hook";

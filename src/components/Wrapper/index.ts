@@ -1,1 +1,1 @@
-export * from "./Wrapper.component";
+export { Wrapper } from "./Wrapper.component";

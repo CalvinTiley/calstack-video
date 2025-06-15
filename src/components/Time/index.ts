@@ -1,1 +1,1 @@
-export * from "./Time.component";
+export { Time } from "./Time.component";

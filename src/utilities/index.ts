@@ -1,3 +1,3 @@
-export * from "./build-class-name";
-export * from "./is-object";
-export * from "./is-video-element";
+export { buildClassName } from "./build-class-name";
+export { isObject } from "./is-object";
+export { isVideoElement } from "./is-video-element";

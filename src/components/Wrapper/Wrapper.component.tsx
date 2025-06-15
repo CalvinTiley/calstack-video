@@ -1,14 +1,11 @@
-import {
-    CalstackVideoElement,
-    ConditionalVisible,
-    ControlBar,
-} from "~components";
+import { VideoElement, ConditionalVisible, ControlBar } from "~components";
 
 import { ICalstackVideo } from "~types/video.type";
-import { useWrapper } from "./use-wrapper";
+import { useWrapper } from "./use-wrapper.hook";
+
+import { Overlay } from "../Overlay";
 
 import "./Wrapper.styles.css";
-import { Overlay } from "../Overlay";
 
 export const Wrapper = ({ controls, ...props }: ICalstackVideo) => {
     const { isHovering, wrapperRef, onMouseEnter, onMouseMove, onMouseLeave } =
@@ -23,7 +20,7 @@ export const Wrapper = ({ controls, ...props }: ICalstackVideo) => {
             onMouseLeave={onMouseLeave}
             ref={wrapperRef}
         >
-            <CalstackVideoElement {...props} />
+            <VideoElement {...props} />
 
             <Overlay />
 

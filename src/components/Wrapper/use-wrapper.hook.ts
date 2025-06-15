@@ -26,8 +26,8 @@ export const useWrapper = () => {
     return {
         isHovering,
         onMouseEnter,
-        onMouseMove,
         onMouseLeave,
+        onMouseMove,
         wrapperRef,
     };
 };

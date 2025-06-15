@@ -1,3 +1,3 @@
-export * from "./use-debounce";
-export * from "./use-double-click";
-export * from "./use-toggle-fullscreen";
+export { useDebouncedCallback } from "./use-debounce";
+export { useDoubleClick } from "./use-double-click";
+export { useToggleFullscreen } from "./use-toggle-fullscreen";

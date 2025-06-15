@@ -3,6 +3,7 @@ import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
+import sortKeysFix from "eslint-plugin-sort-keys-fix";
 
 export default tseslint.config(
     { ignores: ["dist"] },
@@ -16,6 +17,7 @@ export default tseslint.config(
         plugins: {
             "react-hooks": reactHooks,
             "react-refresh": reactRefresh,
+            "sort-keys-fix": sortKeysFix,
         },
         rules: {
             ...reactHooks.configs.recommended.rules,
@@ -30,6 +32,16 @@ export default tseslint.config(
                     varsIgnorePattern: "^_",
                 },
             ],
+
+            // Enforce sorted keys in objects and TS interfaces
+            "sort-keys-fix/sort-keys-fix": [
+                "error",
+                "asc",
+                { caseSensitive: false, natural: false },
+            ],
+
+            // Optional: enforce sorted union/intersection types
+            "@typescript-eslint/sort-type-constituents": "error",
         },
     },
 );

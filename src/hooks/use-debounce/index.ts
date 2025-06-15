@@ -1,1 +1,1 @@
-export * from "./use-debounce.hook";
+export { useDebouncedCallback } from "./use-debounce.hook";

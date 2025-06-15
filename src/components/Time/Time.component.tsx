@@ -1,4 +1,4 @@
-import { useTime } from "./use-time";
+import { useTime } from "./use-time.hook";
 
 import "./Time.styles.css";
 

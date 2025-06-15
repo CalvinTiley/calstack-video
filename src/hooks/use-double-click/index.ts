@@ -1,1 +1,1 @@
-export * from "./use-double-click.hook";
+export { useDoubleClick } from "./use-double-click.hook";

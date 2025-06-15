@@ -1,13 +1,16 @@
-import { PlayPauseControl } from "../PlayPauseControl";
+import { useControlBar } from "./use-control-bar.hook";
 
-import { useControlBar } from "./use-control-bar";
-
-import "./ControlBar.styles.css";
-import { NextControl } from "../NextControl";
 import { Time } from "../Time";
 import { VolumeControl } from "../VolumeControl";
-import { FullscreenControl } from "../FullscreenControl";
-import { ProgressBar } from "./components";
+import {
+    ControlBarControl,
+    ControlBarFullscreenControl,
+    ControlBarNextControl,
+    ControlBarPlayPauseControl,
+    ControlBarProgressBar,
+} from "./components";
+
+import "./ControlBar.styles.css";
 
 export const ControlBar = () => {
     const { isActive } = useControlBar();
@@ -15,12 +18,12 @@ export const ControlBar = () => {
     return (
         <div className="calstack-video-control-bar" data-active={isActive}>
             <div className="calstack-video-control-bar-container">
-                <ProgressBar />
+                <ControlBarProgressBar />
 
                 <div className="calstack-video-control-bar-controls">
-                    <PlayPauseControl />
+                    <ControlBarPlayPauseControl />
 
-                    <NextControl />
+                    <ControlBarNextControl />
 
                     <VolumeControl />
 
@@ -28,9 +31,15 @@ export const ControlBar = () => {
                         <Time />
                     </div>
 
-                    <FullscreenControl />
+                    <ControlBarFullscreenControl />
                 </div>
             </div>
         </div>
     );
 };
+
+ControlBar.Control = ControlBarControl;
+ControlBar.FullscreenControl = ControlBarFullscreenControl;
+ControlBar.Control = ControlBarControl;
+ControlBar.Control = ControlBarControl;
+ControlBar.Control = ControlBarControl;

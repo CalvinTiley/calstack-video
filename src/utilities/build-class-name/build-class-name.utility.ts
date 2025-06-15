@@ -1,2 +1,4 @@
-export const buildClassName = (defaultClass: string, className?: string) =>
-    `${defaultClass} ${className ?? ""}`.trim();
+export const buildClassName = (
+    defaultClass: string,
+    className?: string,
+): string => `${defaultClass} ${className ?? ""}`.trim();
