@@ -1,5 +1,7 @@
 import {
     ControlBar,
+    Overlay,
+    RangeSlider,
     Time,
     VideoElement,
     VolumeControl,
@@ -16,6 +18,8 @@ export const CalstackVideo = (props: ICalstackVideo) => (
 
 CalstackVideo.ControlBar = ControlBar;
 CalstackVideo.Provider = VideoProvider;
+CalstackVideo.Overlay = Overlay;
+CalstackVideo.RangeSlider = RangeSlider;
 CalstackVideo.Time = Time;
 CalstackVideo.VideoElement = VideoElement;
 CalstackVideo.VolumeControl = VolumeControl;

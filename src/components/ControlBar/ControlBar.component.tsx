@@ -40,6 +40,6 @@ export const ControlBar = () => {
 
 ControlBar.Control = ControlBarControl;
 ControlBar.FullscreenControl = ControlBarFullscreenControl;
-ControlBar.Control = ControlBarControl;
-ControlBar.Control = ControlBarControl;
-ControlBar.Control = ControlBarControl;
+ControlBar.NextControl = ControlBarNextControl;
+ControlBar.PlayPauseControl = ControlBarPlayPauseControl;
+ControlBar.ProgressBar = ControlBarProgressBar;
