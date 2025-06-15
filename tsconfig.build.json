@@ -1,11 +1,31 @@
 {
     "extends": "./tsconfig.json",
     "compilerOptions": {
-        "noEmit": false,
+        "baseUrl": ".",
+        "paths": {
+            "~components": ["src/components/index.ts"],
+            "~components/*": ["src/components/*"],
+            "~contexts": ["src/contexts/index.ts"],
+            "~contexts/*": ["src/contexts/*"],
+            "~hooks": ["src/hooks/index.ts"],
+            "~hooks/*": ["src/hooks/*"],
+            "~types/*": ["src/types/*"],
+            "~utilities": ["src/utilities/index.ts"],
+            "~utilities/*": ["src/utilities/*"]
+        },
         "declaration": true,
         "emitDeclarationOnly": true,
+        "declarationDir": "dist",
         "outDir": "dist",
-        "skipLibCheck": true
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "target": "ESNext",
+        "jsx": "react-jsx",
+        "rootDir": "src",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true
     },
-    "include": ["src/types"]
+    "exclude": ["src/sandbox.tsx"],
+    "include": ["src"]
 }

@@ -1,8 +1,8 @@
-import { buildClassName } from "~utilities";
 import { useRangeSlider } from "./use-range-slider.hook";
 
 import "./RangeSlider.styles.css";
 import { IRangeSlider } from "./RangeSlider.types";
+import { buildClassName } from "~utilities/build-class-name";
 
 export const RangeSlider = ({
     className,

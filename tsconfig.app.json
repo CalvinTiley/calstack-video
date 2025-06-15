@@ -1,4 +1,5 @@
 {
+    "extends": "./tsconfig.json",
     "compilerOptions": {
         "allowImportingTsExtensions": true,
         "isolatedModules": true,
@@ -15,7 +16,6 @@
         "skipLibCheck": true,
         "strict": true,
         "target": "ES2020",
-        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
         "useDefineForClassFields": true,
         "baseUrl": ".",
         "paths": {
@@ -23,7 +23,7 @@
             "~contexts": ["src/contexts/index.ts"],
             "~hooks": ["src/hooks/index.ts"],
             "~types/*": ["src/types/*"],
-            "~utilities": ["src/utilities/index.ts"]
+            "~utilities/*": ["src/utilities/*"]
         }
     },
     "include": ["src"]

@@ -1,4 +1,4 @@
-import { buildClassName } from "~utilities";
+import { buildClassName } from "~utilities/build-class-name";
 import { IVideoElement } from "../../types/video.type";
 
 import { useVideo } from "./use-video.hook";

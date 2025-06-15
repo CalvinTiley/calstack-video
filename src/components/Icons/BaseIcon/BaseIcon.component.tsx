@@ -1,7 +1,7 @@
 import { HTMLAttributes, ReactNode } from "react";
-import { buildClassName } from "~utilities";
 
 import "./BaseIcon.styles.css";
+import { buildClassName } from "~utilities/build-class-name";
 
 interface IBaseIcon extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;

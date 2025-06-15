@@ -11,7 +11,7 @@ export default defineConfig({
             name: "CalstackVideo",
         },
         rollupOptions: {
-            external: ["react", "react-dom"], // don't bundle react
+            external: ["react", "react-dom", "react/jsx-runtime"],
             output: {
                 globals: {
                     react: "React",

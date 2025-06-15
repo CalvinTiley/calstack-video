@@ -1,12 +1,6 @@
-import { HTMLAttributes, ReactNode } from "react";
-import { buildClassName } from "~utilities";
-
 import "./Control.styles.css";
-
-interface IControl extends HTMLAttributes<HTMLButtonElement> {
-    children: ReactNode;
-    isActive?: boolean;
-}
+import { buildClassName } from "~utilities/build-class-name";
+import { IControl } from "./Control.types";
 
 export const ControlBarControl = ({
     children,

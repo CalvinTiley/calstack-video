@@ -1,6 +1,6 @@
 import { SyntheticEvent, useCallback } from "react";
 import { useVideoContext } from "~contexts";
-import { isVideoElement } from "~utilities";
+import { isVideoElement } from "~utilities/is-video-element";
 
 export const useVideo = () => {
     const {
