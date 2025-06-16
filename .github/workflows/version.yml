@@ -1,0 +1,33 @@
+name: Create Version PR
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    version:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: pnpm/action-setup@v3
+              with:
+                  version: 8
+
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  registry-url: "https://registry.npmjs.org/"
+
+            - name: Install dependencies
+              run: pnpm install --frozen-lockfile
+
+            - name: Create version PR
+              uses: changesets/action@v1
+              with:
+                  version: pnpm version-packages
+                  publish: false
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
