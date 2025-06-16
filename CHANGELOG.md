@@ -1,5 +1,11 @@
 # @calstack/video
 
+## 0.1.2
+
+### Patch Changes
+
+- 216d2b6: Fix publish
+
 ## 0.1.1
 
 ### Patch Changes
