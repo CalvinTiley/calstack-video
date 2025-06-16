@@ -27,6 +27,7 @@
         "preview": "vite preview"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.29.4",
         "@eslint/js": "^9.17.0",
         "@trivago/prettier-plugin-sort-imports": "^5.2.0",
         "@types/node": "^22.15.2",
