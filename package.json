@@ -3,6 +3,9 @@
     "version": "0.1.0",
     "type": "module",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
     "main": "./dist/calstack-video.umd.js",
     "module": "./dist/calstack-video.es.js",
     "exports": {

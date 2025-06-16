@@ -13,6 +13,8 @@ jobs:
     version:
         runs-on: ubuntu-latest
 
+        if: github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'Version Packages')
+
         steps:
             - uses: actions/checkout@v4
 
