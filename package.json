@@ -1,6 +1,6 @@
 {
     "name": "@calstack/video",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "type": "module",
     "license": "MIT",
     "main": "./dist/calstack-video.umd.js",
