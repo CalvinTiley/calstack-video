@@ -27,7 +27,7 @@ jobs:
             - name: Create version PR
               uses: changesets/action@v1
               with:
-                  version: pnpm version-packages
+                  version: pnpm run version-packages
                   publish: false
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
