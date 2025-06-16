@@ -9,7 +9,10 @@
         ".": {
             "types": "./dist/index.d.ts",
             "import": "./dist/calstack-video.es.js",
-            "require": "./dist/calstack-video.umd.js"
+            "require": "./dist/calstack-video.umd.js",
+            "changeset": "changeset",
+            "version-packages": "changeset version",
+            "release": "pnpm version-packages && pnpm build && changeset publish"
         },
         "./video.css": "./dist/video.css"
     },
