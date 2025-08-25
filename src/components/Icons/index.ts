@@ -1,9 +1,0 @@
-export { BaseIcon } from "./BaseIcon";
-export { EnterFullscreenIcon } from "./EnterFullscreenIcon.component";
-export { ExitFullscreenIcon } from "./ExitFullscreenIcon.component";
-export { MuteIcon } from "./MuteIcon.component";
-export { NextIcon } from "./NextIcon.component";
-export { PauseIcon } from "./PauseIcon.component";
-export { PlayIcon } from "./PlayIcon.component";
-export { Spinner } from "./Spinner.component";
-export { UnmuteIcon } from "./UnmuteIcon.component";

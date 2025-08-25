@@ -1,10 +1,14 @@
 {
 	"tabWidth": 4,
+	"plugins": [
+		"@trivago/prettier-plugin-sort-imports"
+	],
 	"importOrder": [
-		"^react$",
 		"<THIRD_PARTY_MODULES>",
-		"^[../]",
-		"^[./]"
+		"^~",
+		"^(?!.*\\.(css|scss|sass|less)$)\\.\\./",
+		"^(?!.*\\.(css|scss|sass|less)$)\\./",
+		".*\\.(css|scss|sass|less)$"
 	],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true

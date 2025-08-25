@@ -1,17 +1,23 @@
 import { useCallback } from "react";
-import { useVideoContext } from "~contexts";
+
+import { useMediaContext, useVideoContext } from "~contexts";
 
 export const useToggleFullscreen = () => {
-    const { setIsFullscreen, wrapperRef } = useVideoContext();
+    const { wrapperRef } = useVideoContext();
+    const { setIsFullscreen } = useMediaContext();
 
-    const toggleFullscreen = useCallback(() => {
+    const toggleFullscreen = useCallback(async () => {
         if (wrapperRef.current) {
-            if (document.fullscreenElement) {
-                document.exitFullscreen();
-                setIsFullscreen(false);
-            } else {
-                wrapperRef.current.requestFullscreen();
-                setIsFullscreen(true);
+            try {
+                if (document.fullscreenElement) {
+                    await document.exitFullscreen();
+                    setIsFullscreen(false);
+                } else {
+                    wrapperRef.current.requestFullscreen();
+                    setIsFullscreen(true);
+                }
+            } catch (error) {
+                console.error(error);
             }
         }
     }, [setIsFullscreen, wrapperRef]);

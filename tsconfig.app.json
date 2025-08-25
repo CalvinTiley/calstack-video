@@ -16,15 +16,7 @@
         "skipLibCheck": true,
         "strict": true,
         "target": "ES2020",
-        "useDefineForClassFields": true,
-        "baseUrl": ".",
-        "paths": {
-            "~components": ["src/components/index.ts"],
-            "~contexts": ["src/contexts/index.ts"],
-            "~hooks": ["src/hooks/index.ts"],
-            "~types/*": ["src/types/*"],
-            "~utilities/*": ["src/utilities/*"]
-        }
+        "useDefineForClassFields": true
     },
     "include": ["src"]
 }

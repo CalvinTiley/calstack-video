@@ -1,9 +1,9 @@
 import js from "@eslint/js";
-import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import tseslint from "typescript-eslint";
 import sortKeysFix from "eslint-plugin-sort-keys-fix";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 export default tseslint.config(
     { ignores: ["dist"] },
@@ -32,15 +32,19 @@ export default tseslint.config(
                     varsIgnorePattern: "^_",
                 },
             ],
-
-            // Enforce sorted keys in objects and TS interfaces
+            "@typescript-eslint/consistent-type-imports": [
+                "error",
+                { prefer: "type-imports", fixStyle: "separate-type-imports" },
+            ],
+            "@typescript-eslint/consistent-type-exports": [
+                "error",
+                { fixMixedExportsWithInlineTypeSpecifier: true },
+            ],
             "sort-keys-fix/sort-keys-fix": [
                 "error",
                 "asc",
                 { caseSensitive: false, natural: false },
             ],
-
-            // Optional: enforce sorted union/intersection types
             "@typescript-eslint/sort-type-constituents": "error",
         },
     },

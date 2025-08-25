@@ -1,8 +1,6 @@
-import { HTMLAttributes, VideoHTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 
-export interface IVideoElement extends VideoHTMLAttributes<HTMLVideoElement> {
-    preventSeek?: boolean;
-}
+import type { IVideoElement } from "~ui";
 
 export interface ICalstackVideo extends IVideoElement {
     wrapperProps?: HTMLAttributes<HTMLDivElement>;

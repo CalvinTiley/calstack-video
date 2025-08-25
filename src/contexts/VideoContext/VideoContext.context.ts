@@ -1,4 +1,5 @@
-import { createSafeContext } from "../utilities";
+import { createSafeContext } from "~utilities";
+
 import type { IVideoContext } from "./VideoContext.types";
 
 export const [VideoContext, useVideoContext] = createSafeContext<IVideoContext>(

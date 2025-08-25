@@ -1,32 +1,52 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
     build: {
         lib: {
-            entry: path.resolve(__dirname, "src/index.tsx"),
+            formats: ["es", "cjs"],
+            entry: path.resolve(__dirname, "src/index.ts"),
             fileName: (format) => `calstack-video.${format}.js`,
             name: "CalstackVideo",
         },
         rollupOptions: {
             external: ["react", "react-dom", "react/jsx-runtime"],
-            output: {
-                globals: {
-                    react: "React",
-                    "react-dom": "ReactDOM",
-                },
+            input: {
+                index: path.resolve(__dirname, "src/index.ts"),
+                contexts: path.resolve(__dirname, "src/contexts/index.ts"),
+                hooks: path.resolve(__dirname, "src/hooks/index.ts"),
+                types: path.resolve(__dirname, "src/types/index.ts"),
+                ui: path.resolve(__dirname, "src/ui/index.ts"),
+                utilities: path.resolve(__dirname, "src/utilities/index.ts"),
             },
+            output: [
+                {
+                    dir: "dist",
+                    format: "es",
+                    entryFileNames: "[name].mjs",
+                    chunkFileNames: "chunks/[name]-[hash].mjs",
+                    exports: "named",
+                },
+                {
+                    dir: "dist",
+                    format: "cjs",
+                    entryFileNames: "[name].cjs",
+                    chunkFileNames: "chunks/[name]-[hash].cjs",
+                    exports: "named",
+                },
+            ],
         },
     },
     plugins: [react()],
     resolve: {
         alias: {
-            "~components": path.resolve(__dirname, "src/components"),
-            "~contexts": path.resolve(__dirname, "src/contexts"),
-            "~hooks": path.resolve(__dirname, "src/hooks"),
-            "~utilities": path.resolve(__dirname, "src/utilities"),
+            "~contexts": path.resolve(__dirname, "src/contexts/index.ts"),
+            "~hooks": path.resolve(__dirname, "src/hooks/index.ts"),
+            "~types": path.resolve(__dirname, "src/types/index.ts"),
+            "~ui": path.resolve(__dirname, "src/ui/index.ts"),
+            "~utilities": path.resolve(__dirname, "src/utilities/index.ts"),
         },
     },
 });

@@ -11,10 +11,37 @@
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
-            "import": "./dist/calstack-video.es.js",
-            "require": "./dist/calstack-video.umd.js"
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
         },
-        "./video.css": "./dist/video.css"
+        "./contexts": {
+            "types": "./dist/contexts/index.d.ts",
+            "import": "./dist/contexts.mjs",
+            "require": "./dist/contexts.cjs"
+        },
+        "./hooks": {
+            "types": "./dist/hooks/index.d.ts",
+            "import": "./dist/hooks.mjs",
+            "require": "./dist/hooks.cjs"
+        },
+        "./types": {
+            "types": "./dist/types/index.d.ts",
+            "import": "./dist/types.mjs",
+            "require": "./dist/types.cjs"
+        },
+        "./ui": {
+            "types": "./dist/ui/index.d.ts",
+            "import": "./dist/ui.mjs",
+            "require": "./dist/ui.cjs"
+        },
+        "./utilities": {
+            "types": "./dist/utilities/index.d.ts",
+            "import": "./dist/utilities.mjs",
+            "require": "./dist/utilities.cjs"
+        },
+        "./video.css": {
+            "default": "./dist/video.css"
+        }
     },
     "files": [
         "dist"
