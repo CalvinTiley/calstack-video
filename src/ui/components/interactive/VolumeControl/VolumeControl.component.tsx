@@ -1,7 +1,7 @@
-import { MuteIcon, RangeSlider, UnmuteIcon } from "~ui";
+import { CalstackVideoRangeSlider, MuteIcon, UnmuteIcon } from "~ui";
 
 import { ConditionalVisible } from "../../miscellaneous";
-import { ControlBarControl } from "../ControlBar/components";
+import { CalstackVideoControlBarControl } from "../ControlBar/components";
 
 import { useVolumeControl } from "./use-volume-control.hook";
 
@@ -12,7 +12,7 @@ export const VolumeControl = () => {
 
     return (
         <div className="calstack-video-volume">
-            <ControlBarControl
+            <CalstackVideoControlBarControl
                 className="calstack-video-mute-control"
                 onClick={toggleMute}
             >
@@ -22,10 +22,10 @@ export const VolumeControl = () => {
                 >
                     <MuteIcon />
                 </ConditionalVisible>
-            </ControlBarControl>
+            </CalstackVideoControlBarControl>
 
             <div className="calstack-video-volume-slider-container">
-                <RangeSlider
+                <CalstackVideoRangeSlider
                     onChange={onSliderChange}
                     className="calstack-video-volume-range"
                     id="calstack-video-volume-slider"

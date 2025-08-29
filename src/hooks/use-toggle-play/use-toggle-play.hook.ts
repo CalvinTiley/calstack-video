@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import { useMediaContext, useVideoContext } from "~contexts";
 
-export const usePlayPauseControl = () => {
+export const useTogglePlay = () => {
     const { videoRef } = useVideoContext();
     const { isPlaying } = useMediaContext();
 

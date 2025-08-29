@@ -1,1 +1,1 @@
-export { ControlBarProgressBar } from "./ProgressBar.component";
+export { CalstackVideoControlBarProgressBar } from "./ProgressBar.component";

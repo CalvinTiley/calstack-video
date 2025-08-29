@@ -1,6 +1,6 @@
 import { useMediaContext } from "~contexts";
 
-export const useControlBar = () => {
+export const useCalstackVideoControlBarWrapper = () => {
     const { isPlaying } = useMediaContext();
 
     return {

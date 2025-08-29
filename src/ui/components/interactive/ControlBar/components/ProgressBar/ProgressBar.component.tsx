@@ -1,13 +1,13 @@
-import { RangeSlider } from "~ui";
+import { CalstackVideoRangeSlider } from "~ui";
 
 import { useProgressBar } from "./use-progress-bar.hook";
 
-export const ControlBarProgressBar = () => {
+export const CalstackVideoControlBarProgressBar = () => {
     const { onChange, onMouseDown, onMouseUp, progress } = useProgressBar();
 
     return (
         <div className="calstack-video-progress-bar">
-            <RangeSlider
+            <CalstackVideoRangeSlider
                 className="calstack-video-progress-bar__slider"
                 onChange={onChange}
                 onMouseDown={onMouseDown}

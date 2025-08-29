@@ -3,13 +3,15 @@ import { PauseIcon, PlayIcon, Spinner } from "~ui";
 
 import { ConditionalVisible } from "../../miscellaneous/ConditionalVisible";
 
-import { useOverlay } from "./use-overlay";
+import { ICalstackVideoOverlay } from "./Overlay.types";
+import { useCalstackVideoOverlay } from "./use-overlay";
 
 import "./Overlay.styles.css";
 
-export const Overlay = () => {
+export const CalstackVideoOverlay = ({ options }: ICalstackVideoOverlay) => {
     const { isPlaying } = useMediaContext();
-    const { isFeedbackVisible, isStalling, onOverlayClick } = useOverlay();
+    const { isFeedbackVisible, isStalling, onOverlayClick } =
+        useCalstackVideoOverlay({ options });
 
     return (
         <div className="calstack-video-overlay">

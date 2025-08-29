@@ -1,17 +1,18 @@
 import { ConditionalVisible, NextIcon, PauseIcon } from "~ui";
 
-import { ControlBarControl } from "../Control";
+import { CalstackVideoControlBarControl } from "../Control";
 
-import { useNextControl } from "./use-next-control.hook";
+import { ICalstackVideoNextControl } from "./NextControl.types";
 
-export const ControlBarNextControl = () => {
-    const { onNext } = useNextControl();
-
+export const CalstackVideoControlBarNextControl = ({
+    onNext,
+    ...props
+}: ICalstackVideoNextControl) => {
     return (
-        <ControlBarControl onClick={onNext}>
+        <CalstackVideoControlBarControl {...props} onClick={onNext}>
             <ConditionalVisible on={true} fallback={<PauseIcon />}>
                 <NextIcon />
             </ConditionalVisible>
-        </ControlBarControl>
+        </CalstackVideoControlBarControl>
     );
 };

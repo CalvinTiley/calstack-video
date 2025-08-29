@@ -4,7 +4,7 @@ import { IControl } from "./Control.types";
 
 import "./Control.styles.css";
 
-export const ControlBarControl = ({
+export const CalstackVideoControlBarControl = ({
     children,
     className,
     isActive,

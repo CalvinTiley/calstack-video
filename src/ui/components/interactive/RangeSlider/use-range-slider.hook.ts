@@ -2,7 +2,7 @@ import type { ChangeEvent } from "react";
 
 import type { IUseRangeSlider } from "./RangeSlider.types";
 
-export const useRangeSlider = ({ onChange }: IUseRangeSlider) => {
+export const useCalstackVideoRangeSlider = ({ onChange }: IUseRangeSlider) => {
     const onRangeChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { value, max, min } = event.target;
 

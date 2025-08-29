@@ -1,12 +1,15 @@
 import { useVideoContext } from "~contexts";
 import { buildClassName } from "~ui";
 
-import type { IVideoElement } from "./VideoElement.types";
-import { useVideoElement } from "./use-video-element.hook";
+import type { ICalstackVideoVideo } from "./Video.types";
+import { useVideo } from "./use-video.hook";
 
-import "./VideoElement.styles.css";
+import "./Video.styles.css";
 
-export const VideoElement = ({ className, ...props }: IVideoElement) => {
+export const CalstackVideoVideo = ({
+    className,
+    ...props
+}: ICalstackVideoVideo) => {
     const { videoRef } = useVideoContext();
 
     const {
@@ -19,7 +22,7 @@ export const VideoElement = ({ className, ...props }: IVideoElement) => {
         onTimeUpdate,
         onVolumeChange,
         onWaiting,
-    } = useVideoElement();
+    } = useVideo();
 
     return (
         <video

@@ -1,25 +1,25 @@
-import { useMediaContext } from "~contexts";
-import { useToggleFullscreen } from "~hooks";
 import {
     ConditionalVisible,
     EnterFullscreenIcon,
     ExitFullscreenIcon,
 } from "~ui";
 
-import { ControlBarControl } from "../Control";
+import { CalstackVideoControlBarControl } from "../Control";
 
-export const ControlBarFullscreenControl = () => {
-    const { isFullscreen } = useMediaContext();
-    const toggleFullscreen = useToggleFullscreen();
+import { useCalstackVideoFullscreenControl } from "./use-fullscreen-control.hook";
+
+export const CalstackVideoControlBarFullscreenControl = () => {
+    const { isFullscreen, toggleFullscreen } =
+        useCalstackVideoFullscreenControl();
 
     return (
-        <ControlBarControl onClick={toggleFullscreen}>
+        <CalstackVideoControlBarControl onClick={toggleFullscreen}>
             <ConditionalVisible
                 on={!isFullscreen}
                 fallback={<ExitFullscreenIcon />}
             >
                 <EnterFullscreenIcon />
             </ConditionalVisible>
-        </ControlBarControl>
+        </CalstackVideoControlBarControl>
     );
 };

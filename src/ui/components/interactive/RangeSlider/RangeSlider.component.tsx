@@ -1,17 +1,17 @@
 import { buildClassName } from "~ui";
 
 import type { IRangeSlider } from "./RangeSlider.types";
-import { useRangeSlider } from "./use-range-slider.hook";
+import { useCalstackVideoRangeSlider } from "./use-range-slider.hook";
 
 import "./RangeSlider.styles.css";
 
-export const RangeSlider = ({
+export const CalstackVideoRangeSlider = ({
     className,
     onChange,
     value,
     ...props
 }: IRangeSlider) => {
-    const { onRangeChange } = useRangeSlider({
+    const { onRangeChange } = useCalstackVideoRangeSlider({
         onChange,
     });
 

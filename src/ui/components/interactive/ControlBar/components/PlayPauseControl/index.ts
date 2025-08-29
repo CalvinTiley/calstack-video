@@ -1,1 +1,1 @@
-export { ControlBarPlayPauseControl } from "./PlayPauseControl.component";
+export { CalstackVideoControlBarPlayPauseControl } from "./PlayPauseControl.component";

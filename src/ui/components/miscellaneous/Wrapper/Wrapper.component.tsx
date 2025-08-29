@@ -4,7 +4,7 @@ import { useWrapper } from "./use-wrapper.hook";
 
 import "./Wrapper.styles.css";
 
-export const Wrapper = ({ children }: PropsWithChildren) => {
+export const CalstackVideoWrapper = ({ children }: PropsWithChildren) => {
     const { isHovering, wrapperRef, onMouseEnter, onMouseMove, onMouseLeave } =
         useWrapper();
 

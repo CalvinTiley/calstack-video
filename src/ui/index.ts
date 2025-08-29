@@ -1,12 +1,29 @@
 export {
     BaseIcon,
+    CalstackVideoControlBar,
+    CalstackVideoControlBarCenter,
+    CalstackVideoControlBarContainer,
+    CalstackVideoControlBarControl,
+    CalstackVideoControlBarControls,
+    CalstackVideoControlBarFullscreenControl,
+    CalstackVideoControlBarNextControl,
+    CalstackVideoControlBarPlayPauseControl,
+    CalstackVideoControlBarProgressBar,
+    CalstackVideoControlBarShell,
+    CalstackVideoControlBarTime,
+    CalstackVideoControlBarWrapper,
+    CalstackVideoOverlay,
+    CalstackVideoRangeSlider,
+    CalstackVideoShell,
+    CalstackVideoVideo,
+    CalstackVideoWrapper,
     ConditionalVisible,
-    ControlBar,
-    Overlay,
-    RangeSlider,
-    Time,
-    VideoElement,
-    Wrapper,
+    useCalstackVideoControlBarTime,
+    useCalstackVideoControlBarWrapper,
+    useCalstackVideoFullscreenControl,
+    useCalstackVideoOverlay,
+    useCalstackVideoRangeSlider,
+    VideoControlBarComponent,
 } from "./components";
 
 export {
@@ -22,4 +39,10 @@ export {
 
 export { buildClassName, isVideoElement } from "./utilities";
 
-export type { IRangeSlider, IVideoElement } from "./components";
+export type {
+    ICalstackVideoControlBarShell,
+    ICalstackVideoVideo,
+    IRangeSlider,
+    ICalstackVideoNextControl,
+    ICalstackVideoOverlay,
+} from "./components";

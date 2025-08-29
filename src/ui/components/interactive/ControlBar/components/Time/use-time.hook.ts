@@ -2,7 +2,7 @@ import { useMediaContext } from "~contexts";
 
 import { formatTime } from "./utilities";
 
-export const useTime = () => {
+export const useCalstackVideoControlBarTime = () => {
     const { currentTime, duration } = useMediaContext();
 
     const formattedCurrentTime = formatTime(currentTime);

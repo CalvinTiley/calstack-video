@@ -1,16 +1,21 @@
 import { useCallback, useEffect, useState } from "react";
 
-import { useMediaContext, useVideoContext } from "~contexts";
+import { useMediaContext } from "~contexts";
 import {
     useDebouncedCallback,
     useDoubleClick,
     useToggleFullscreen,
+    useTogglePlay,
 } from "~hooks";
 
-export const useOverlay = () => {
-    const { videoRef } = useVideoContext();
-    const { isPlaying, isStalling } = useMediaContext();
+import { ICalstackVideoOverlay } from "./Overlay.types";
+
+export const useCalstackVideoOverlay = ({
+    options,
+}: Pick<ICalstackVideoOverlay, "options">) => {
+    const { isStalling } = useMediaContext();
     const toggleFullscreen = useToggleFullscreen();
+    const { togglePlay, isPlaying } = useTogglePlay();
 
     const [isFeedbackVisible, setIsFeedbackVisible] = useState(false);
 
@@ -25,13 +30,13 @@ export const useOverlay = () => {
     }, [isPlaying]);
 
     const onOverlaySingleClick = useCallback(() => {
-        if (videoRef.current) {
-            videoRef.current[isPlaying ? "pause" : "play"]();
+        if (!options?.disableTogglePlayOnClick) {
+            togglePlay();
         }
-    }, [isPlaying, videoRef]);
+    }, [options?.disableTogglePlayOnClick, isPlaying]);
 
     const onOverlayClick = useDoubleClick(
-        toggleFullscreen,
+        options?.disableFullscreenOnDoubleClick ? () => {} : toggleFullscreen,
         onOverlaySingleClick,
     );
 

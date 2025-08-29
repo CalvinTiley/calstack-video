@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 interface IConditionalVisible {
     children: ReactNode;
     fallback?: ReactNode;
-    on: boolean;
+    on: unknown;
 }
 
 export const ConditionalVisible = ({

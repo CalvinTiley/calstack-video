@@ -1,17 +1,16 @@
+import { useTogglePlay } from "~hooks";
 import { ConditionalVisible, PauseIcon, PlayIcon } from "~ui";
 
-import { ControlBarControl } from "../Control";
+import { CalstackVideoControlBarControl } from "../Control";
 
-import { usePlayPauseControl } from "./use-play-pause-control.hook";
-
-export const ControlBarPlayPauseControl = () => {
-    const { isPlaying, togglePlay } = usePlayPauseControl();
+export const CalstackVideoControlBarPlayPauseControl = () => {
+    const { isPlaying, togglePlay } = useTogglePlay();
 
     return (
-        <ControlBarControl onClick={togglePlay}>
+        <CalstackVideoControlBarControl onClick={togglePlay}>
             <ConditionalVisible on={!isPlaying} fallback={<PauseIcon />}>
                 <PlayIcon />
             </ConditionalVisible>
-        </ControlBarControl>
+        </CalstackVideoControlBarControl>
     );
 };

@@ -1,1 +1,1 @@
-export { Wrapper } from "./Wrapper.component";
+export { CalstackVideoWrapper } from "./Wrapper.component";

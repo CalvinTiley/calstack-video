@@ -3,7 +3,7 @@ import { SyntheticEvent, useCallback } from "react";
 import { useMediaContext } from "~contexts";
 import { isVideoElement } from "~ui";
 
-export const useVideoElement = () => {
+export const useVideo = () => {
     const {
         setCurrentTime,
         setDuration,

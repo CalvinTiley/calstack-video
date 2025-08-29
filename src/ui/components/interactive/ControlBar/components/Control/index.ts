@@ -1,1 +1,1 @@
-export { ControlBarControl } from "./Control.component";
+export { CalstackVideoControlBarControl } from "./Control.component";
