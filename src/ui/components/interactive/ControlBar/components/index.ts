@@ -19,5 +19,6 @@ export {
     useCalstackVideoControlBarWrapper,
 } from "./Wrapper";
 
+export type { ICalstackVideoControlBarTime } from "./Time";
 export type { ICalstackVideoNextControl } from "./NextControl";
 export type { ICalstackVideoControlBarShell } from "./Shell";

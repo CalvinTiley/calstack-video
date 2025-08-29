@@ -63,5 +63,6 @@ export type {
     ICalstackVideoControlBarShell,
     ICalstackVideoOverlay,
     ICalstackVideoNextControl,
+    ICalstackVideoControlBarTime,
 } from "./ui";
 export type { IMediaContext, IVideoContext } from "./contexts";

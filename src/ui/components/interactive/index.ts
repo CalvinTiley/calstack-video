@@ -24,5 +24,6 @@ export {
 export type {
     ICalstackVideoControlBarShell,
     ICalstackVideoNextControl,
+    ICalstackVideoControlBarTime,
 } from "./ControlBar";
 export type { IRangeSlider } from "./RangeSlider";

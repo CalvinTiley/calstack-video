@@ -32,5 +32,6 @@ export type {
     ICalstackVideoControlBarShell,
     IRangeSlider,
     ICalstackVideoNextControl,
+    ICalstackVideoControlBarTime,
 } from "./interactive";
 export type { ICalstackVideoOverlay } from "./overlays";

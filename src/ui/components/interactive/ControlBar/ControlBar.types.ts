@@ -6,5 +6,6 @@ export interface ICalstackVideoControlBar
     extends HTMLAttributes<HTMLDivElement> {
     containerProps?: HTMLAttributes<HTMLDivElement>;
     components?: Record<VideoControlBarComponent, ReactNode>;
+    maxTimeUnit?: "hours" | "minutes";
     onNext?: () => void;
 }

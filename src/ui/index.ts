@@ -45,4 +45,5 @@ export type {
     IRangeSlider,
     ICalstackVideoNextControl,
     ICalstackVideoOverlay,
+    ICalstackVideoControlBarTime,
 } from "./components";

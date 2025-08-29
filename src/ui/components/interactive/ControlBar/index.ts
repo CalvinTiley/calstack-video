@@ -21,4 +21,5 @@ export { VideoControlBarComponent } from "./ControlBar.enum";
 export type {
     ICalstackVideoControlBarShell,
     ICalstackVideoNextControl,
+    ICalstackVideoControlBarTime,
 } from "./components";

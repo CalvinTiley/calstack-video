@@ -21,6 +21,7 @@ import "./ControlBar.styles.css";
 export const CalstackVideoControlBar = ({
     components,
     containerProps,
+    maxTimeUnit,
     onNext,
     ...props
 }: ICalstackVideoControlBar) => {
@@ -71,7 +72,9 @@ export const CalstackVideoControlBar = ({
                                 on={!components?.time}
                                 fallback={components?.time}
                             >
-                                <CalstackVideoControlBarTime />
+                                <CalstackVideoControlBarTime
+                                    maxUnit={maxTimeUnit}
+                                />
                             </ConditionalVisible>
                         </CalstackVideoControlBarCenter>
                     </ConditionalVisible>
