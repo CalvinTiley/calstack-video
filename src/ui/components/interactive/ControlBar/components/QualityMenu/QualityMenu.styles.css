@@ -5,8 +5,7 @@
 }
 
 .calstack-video-quality-trigger {
-    background-color: rgba(51, 51, 51, 0);
-    background: #1e1e1e;
+    background: rgba(0, 0, 0, 0.2);
     color: white;
     padding: 0.5rem 1.25rem;
     border-radius: 6px;
@@ -19,11 +18,11 @@
     gap: 0.5rem;
     min-width: 120px;
     justify-content: space-between;
-    transition: background-color 0.2s ease;
+    transition: background 0.2s ease;
 }
 
 .calstack-video-quality-trigger:hover {
-    background-color: rgba(51, 51, 51, 1);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .calstack-video-quality-list {

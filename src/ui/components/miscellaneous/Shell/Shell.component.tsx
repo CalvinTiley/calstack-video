@@ -4,6 +4,8 @@ import { CalstackVideoWrapper } from "../Wrapper";
 
 import { ICalstackVideoShell } from "./Shell.types";
 
+import "./Shell.styles.css";
+
 export const CalstackVideoShell = ({
     children,
     isLive,
