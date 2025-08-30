@@ -6,3 +6,13 @@
     position: relative;
     font-family: var(--calstack-video-font-family);
 }
+
+.calstack-video-wrapper[data-hovering="false"]
+    .calstack-video-overlay-clickable-area:hover {
+    cursor: none;
+}
+
+.calstack-video-wrapper[data-paused="true"]
+    .calstack-video-overlay-clickable-area:hover {
+    cursor: default;
+}

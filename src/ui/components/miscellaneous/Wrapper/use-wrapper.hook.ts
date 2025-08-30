@@ -1,10 +1,11 @@
 import { useCallback } from "react";
 
-import { useVideoContext } from "~contexts";
+import { useMediaContext, useVideoContext } from "~contexts";
 import { useDebouncedCallback } from "~hooks";
 
 export const useWrapper = () => {
     const { isHovering, setIsHovering, wrapperRef } = useVideoContext();
+    const { isPlaying } = useMediaContext();
 
     const debouncedSetIsHovering = useDebouncedCallback((value: boolean) => {
         setIsHovering(value);
@@ -26,6 +27,7 @@ export const useWrapper = () => {
 
     return {
         isHovering,
+        isPlaying,
         onMouseEnter,
         onMouseLeave,
         onMouseMove,
