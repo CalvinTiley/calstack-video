@@ -1,0 +1,64 @@
+.calstack-video-quality-menu {
+    position: relative;
+    display: inline-block;
+    font-family: system-ui, sans-serif;
+}
+
+.calstack-video-quality-trigger {
+    background-color: rgba(51, 51, 51, 0);
+    background: #1e1e1e;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+.calstack-video-quality-trigger:hover {
+    background-color: rgba(51, 51, 51, 1);
+}
+
+.calstack-video-quality-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+    min-width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.calstack-video-quality-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #ddd;
+    font-size: 0.875rem;
+    transition: background 0.2s ease;
+}
+
+.calstack-video-quality-item:hover {
+    background: #333;
+    color: white;
+}
+
+.calstack-video-quality-item.active {
+    background: var(--calstack-video-color-accent);
+    color: white;
+    font-weight: 600;
+}
+
+.arrow {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}

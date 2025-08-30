@@ -1,10 +1,9 @@
-import { PropsWithChildren } from "react";
-
 import { VideoContext } from "./VideoContext.context";
+import type { IVideoProvider } from "./VideoContext.types";
 import { useVideoProvider } from "./use-video-provider.hook";
 
-export const VideoProvider = ({ children }: PropsWithChildren) => {
-    const contextProps = useVideoProvider();
+export const VideoProvider = ({ children, src }: IVideoProvider) => {
+    const contextProps = useVideoProvider({ src });
 
     return <VideoContext value={contextProps}>{children}</VideoContext>;
 };

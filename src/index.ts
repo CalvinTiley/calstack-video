@@ -7,6 +7,9 @@ export {
     useVideoContext,
     VideoContext,
     VideoProvider,
+    HLSContext,
+    HLSProvider,
+    useHLSContext,
 } from "./contexts";
 
 export {
@@ -52,11 +55,21 @@ export {
     CalstackVideoControlBarTime,
     useCalstackVideoControlBarTime,
     VideoControlBarComponent,
+    QualityMenu,
+    getQualityBitrate,
+    getQualityLabel,
 } from "./ui";
 
 export { createSafeContext, isObject } from "./utilities";
 
 export type { ICalstackVideo } from "./CalstackVideo";
+export type {
+    IMediaContext,
+    IVideoContext,
+    IHLSContext,
+    IHLSProvider,
+    IQualityLevel,
+} from "./contexts";
 export type {
     ICalstackVideoVideo,
     IRangeSlider,
@@ -64,5 +77,6 @@ export type {
     ICalstackVideoOverlay,
     ICalstackVideoNextControl,
     ICalstackVideoControlBarTime,
+    ICalstackVideoControlBar,
+    ICalstackVideoShell,
 } from "./ui";
-export type { IMediaContext, IVideoContext } from "./contexts";

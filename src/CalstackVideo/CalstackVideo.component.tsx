@@ -11,11 +11,13 @@ import { ICalstackVideo } from "./CalstackVideo.types";
 
 export const CalstackVideo = ({
     controlBarProps,
+    isLive,
     overlayProps,
+    src,
     videoProps,
 }: ICalstackVideo) => {
     return (
-        <CalstackVideoShell>
+        <CalstackVideoShell isLive={isLive} src={src}>
             <CalstackVideoVideo {...videoProps} />
 
             <CalstackVideoOverlay {...overlayProps} />

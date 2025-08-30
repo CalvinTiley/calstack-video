@@ -9,6 +9,7 @@ export {
 export { CalstackVideoControlBarNextControl } from "./NextControl";
 export { CalstackVideoControlBarPlayPauseControl } from "./PlayPauseControl";
 export { CalstackVideoControlBarProgressBar } from "./ProgressBar";
+export { QualityMenu, getQualityBitrate, getQualityLabel } from "./QualityMenu";
 export { CalstackVideoControlBarShell } from "./Shell";
 export {
     CalstackVideoControlBarTime,

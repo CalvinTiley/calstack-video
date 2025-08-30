@@ -8,6 +8,7 @@ import "./Video.styles.css";
 
 export const CalstackVideoVideo = ({
     className,
+    playsInline = true,
     ...props
 }: ICalstackVideoVideo) => {
     const { videoRef } = useVideoContext();
@@ -38,6 +39,7 @@ export const CalstackVideoVideo = ({
             onTimeUpdate={onTimeUpdate}
             onVolumeChange={onVolumeChange}
             onWaiting={onWaiting}
+            playsInline
         />
     );
 };

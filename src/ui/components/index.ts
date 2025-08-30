@@ -17,6 +17,9 @@ export {
     CalstackVideoControlBarTime,
     useCalstackVideoControlBarTime,
     VideoControlBarComponent,
+    QualityMenu,
+    getQualityBitrate,
+    getQualityLabel,
 } from "./interactive";
 export {
     BaseIcon,
@@ -27,11 +30,15 @@ export {
 } from "./miscellaneous";
 export { CalstackVideoOverlay, useCalstackVideoOverlay } from "./overlays";
 
-export type { ICalstackVideoVideo } from "./miscellaneous";
+export type {
+    ICalstackVideoVideo,
+    ICalstackVideoShell,
+} from "./miscellaneous";
 export type {
     ICalstackVideoControlBarShell,
     IRangeSlider,
     ICalstackVideoNextControl,
     ICalstackVideoControlBarTime,
+    ICalstackVideoControlBar,
 } from "./interactive";
 export type { ICalstackVideoOverlay } from "./overlays";

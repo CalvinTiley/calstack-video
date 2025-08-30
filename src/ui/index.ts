@@ -24,6 +24,9 @@ export {
     useCalstackVideoOverlay,
     useCalstackVideoRangeSlider,
     VideoControlBarComponent,
+    QualityMenu,
+    getQualityBitrate,
+    getQualityLabel,
 } from "./components";
 
 export {
@@ -45,5 +48,7 @@ export type {
     IRangeSlider,
     ICalstackVideoNextControl,
     ICalstackVideoOverlay,
+    ICalstackVideoControlBar,
     ICalstackVideoControlBarTime,
+    ICalstackVideoShell,
 } from "./components";

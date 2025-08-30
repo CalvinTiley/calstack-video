@@ -1,3 +1,5 @@
+import { useHLSContext } from "~contexts";
+
 import { ConditionalVisible } from "../../miscellaneous";
 import { VolumeControl } from "../VolumeControl";
 
@@ -14,6 +16,7 @@ import {
     CalstackVideoControlBarShell,
     CalstackVideoControlBarTime,
     CalstackVideoControlBarWrapper,
+    QualityMenu,
 } from "./components";
 
 import "./ControlBar.styles.css";
@@ -25,6 +28,8 @@ export const CalstackVideoControlBar = ({
     onNext,
     ...props
 }: ICalstackVideoControlBar) => {
+    const { isHlsActive } = useHLSContext();
+
     return (
         <CalstackVideoControlBarShell
             containerProps={containerProps}
@@ -77,6 +82,10 @@ export const CalstackVideoControlBar = ({
                                 />
                             </ConditionalVisible>
                         </CalstackVideoControlBarCenter>
+                    </ConditionalVisible>
+
+                    <ConditionalVisible on={isHlsActive}>
+                        <QualityMenu />
                     </ConditionalVisible>
 
                     <ConditionalVisible

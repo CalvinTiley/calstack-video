@@ -14,6 +14,9 @@ export {
     useCalstackVideoControlBarTime,
     useCalstackVideoControlBarWrapper,
     useCalstackVideoFullscreenControl,
+    QualityMenu,
+    getQualityBitrate,
+    getQualityLabel,
 } from "./components";
 
 export { VideoControlBarComponent } from "./ControlBar.enum";
@@ -23,3 +26,5 @@ export type {
     ICalstackVideoNextControl,
     ICalstackVideoControlBarTime,
 } from "./components";
+
+export type { ICalstackVideoControlBar } from "./ControlBar.types";

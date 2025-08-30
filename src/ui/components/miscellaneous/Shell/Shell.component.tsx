@@ -1,14 +1,20 @@
-import { PropsWithChildren } from "react";
-
-import { MediaProvider, VideoProvider } from "~contexts";
+import { HLSProvider, MediaProvider, VideoProvider } from "~contexts";
 
 import { CalstackVideoWrapper } from "../Wrapper";
 
-export const CalstackVideoShell = ({ children }: PropsWithChildren) => {
+import { ICalstackVideoShell } from "./Shell.types";
+
+export const CalstackVideoShell = ({
+    children,
+    isLive,
+    src,
+}: ICalstackVideoShell) => {
     return (
-        <VideoProvider>
+        <VideoProvider src={src}>
             <MediaProvider>
-                <CalstackVideoWrapper>{children}</CalstackVideoWrapper>
+                <HLSProvider isLive={isLive}>
+                    <CalstackVideoWrapper>{children}</CalstackVideoWrapper>
+                </HLSProvider>
             </MediaProvider>
         </VideoProvider>
     );

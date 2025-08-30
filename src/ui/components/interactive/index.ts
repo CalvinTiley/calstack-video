@@ -15,6 +15,9 @@ export {
     CalstackVideoControlBarTime,
     useCalstackVideoControlBarTime,
     VideoControlBarComponent,
+    QualityMenu,
+    getQualityBitrate,
+    getQualityLabel,
 } from "./ControlBar";
 export {
     CalstackVideoRangeSlider,
@@ -25,5 +28,6 @@ export type {
     ICalstackVideoControlBarShell,
     ICalstackVideoNextControl,
     ICalstackVideoControlBarTime,
+    ICalstackVideoControlBar,
 } from "./ControlBar";
 export type { IRangeSlider } from "./RangeSlider";
