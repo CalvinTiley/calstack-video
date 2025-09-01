@@ -3,7 +3,7 @@ import { useHLSContext } from "~contexts";
 import { ConditionalVisible } from "../../miscellaneous";
 import { VolumeControl } from "../VolumeControl";
 
-import { ICalstackVideoControlBar } from "./ControlBar.types";
+import type { ICalstackVideoControlBar } from "./ControlBar.types";
 import {
     CalstackVideoControlBarCenter,
     CalstackVideoControlBarContainer,
